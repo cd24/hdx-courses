@@ -9,6 +9,16 @@
 import UIKit
 
 class ViewController: UIViewController {
+    var left_view : UIView;
+    var right_view : UIView;
+
+    required init(coder aDecoder: NSCoder) {
+        left_view = UIView();
+        right_view = UIView();
+        super.init();
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -14,6 +14,8 @@
 		525781F81A0ED6E900FFC7E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528D811D1A09E9E7008DADF2 /* Main.storyboard */; };
 		525781FA1A0ED72E00FFC7E1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781F91A0ED72E00FFC7E1 /* MobileCoreServices.framework */; };
 		525781FC1A0ED73E00FFC7E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781FB1A0ED73E00FFC7E1 /* SystemConfiguration.framework */; };
+		525781FF1A0EDA5F00FFC7E1 /* CoursesFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525781FE1A0EDA5F00FFC7E1 /* CoursesFilterView.swift */; };
+		525782011A0EDB6100FFC7E1 /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525782001A0EDB6100FFC7E1 /* CourseViewController.swift */; };
 		527ACA351A0ED4B30052037E /* NSArray+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA291A0ED4B30052037E /* NSArray+ObjectiveSugar.m */; };
 		527ACA361A0ED4B30052037E /* NSDictionary+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA2B1A0ED4B30052037E /* NSDictionary+ObjectiveSugar.m */; };
 		527ACA371A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA2D1A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m */; };
@@ -25,7 +27,7 @@
 		527ACA441A0ED4C30052037E /* NSManagedObject+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA401A0ED4C30052037E /* NSManagedObject+Mappings.m */; };
 		528D81171A09E9E7008DADF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D81161A09E9E7008DADF2 /* AppDelegate.swift */; };
 		528D811A1A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 528D81181A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodeld */; };
-		528D811C1A09E9E7008DADF2 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D811B1A09E9E7008DADF2 /* CoursesViewController.swift */; };
+		528D811C1A09E9E7008DADF2 /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D811B1A09E9E7008DADF2 /* CoursesController.swift */; };
 		528D81211A09E9E7008DADF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528D81201A09E9E7008DADF2 /* Images.xcassets */; };
 		528D81301A09E9E7008DADF2 /* Hendrix_Course_SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D812F1A09E9E7008DADF2 /* Hendrix_Course_SchedulerTests.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 		525781F41A0ED68A00FFC7E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		525781F91A0ED72E00FFC7E1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		525781FB1A0ED73E00FFC7E1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		525781FE1A0EDA5F00FFC7E1 /* CoursesFilterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoursesFilterView.swift; sourceTree = "<group>"; };
+		525782001A0EDB6100FFC7E1 /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		527ACA271A0ED4B20052037E /* Hendrix Course Scheduler-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hendrix Course Scheduler-Bridging-Header.h"; sourceTree = "<group>"; };
 		527ACA281A0ED4B30052037E /* NSArray+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ObjectiveSugar.h"; sourceTree = "<group>"; };
 		527ACA291A0ED4B30052037E /* NSArray+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ObjectiveSugar.m"; sourceTree = "<group>"; };
@@ -71,7 +75,7 @@
 		528D81151A09E9E7008DADF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		528D81161A09E9E7008DADF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528D81191A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Hendrix_Course_Scheduler.xcdatamodel; sourceTree = "<group>"; };
-		528D811B1A09E9E7008DADF2 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
+		528D811B1A09E9E7008DADF2 /* CoursesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesController.swift; sourceTree = "<group>"; };
 		528D811E1A09E9E7008DADF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		528D81201A09E9E7008DADF2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		528D81231A09E9E7008DADF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -125,6 +129,9 @@
 		527ACA231A0ED40C0052037E /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				528D811B1A09E9E7008DADF2 /* CoursesController.swift */,
+				525781FE1A0EDA5F00FFC7E1 /* CoursesFilterView.swift */,
+				525782001A0EDB6100FFC7E1 /* CourseViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -198,7 +205,6 @@
 				527ACA231A0ED40C0052037E /* View Controllers */,
 				527ACA221A0ED4010052037E /* Data */,
 				528D81161A09E9E7008DADF2 /* AppDelegate.swift */,
-				528D811B1A09E9E7008DADF2 /* CoursesViewController.swift */,
 				528D811D1A09E9E7008DADF2 /* Main.storyboard */,
 				528D81201A09E9E7008DADF2 /* Images.xcassets */,
 				528D81221A09E9E7008DADF2 /* LaunchScreen.xib */,
@@ -334,7 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528D811C1A09E9E7008DADF2 /* CoursesViewController.swift in Sources */,
+				528D811C1A09E9E7008DADF2 /* CoursesController.swift in Sources */,
 				527ACA381A0ED4B30052037E /* NSNumber+ObjectiveSugar.m in Sources */,
 				527ACA421A0ED4C30052037E /* CoreDataManager.m in Sources */,
 				528D81171A09E9E7008DADF2 /* AppDelegate.swift in Sources */,
@@ -343,9 +349,11 @@
 				527ACA3A1A0ED4B30052037E /* NSString+ObjectiveSugar.m in Sources */,
 				527ACA371A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m in Sources */,
 				527ACA441A0ED4C30052037E /* NSManagedObject+Mappings.m in Sources */,
+				525781FF1A0EDA5F00FFC7E1 /* CoursesFilterView.swift in Sources */,
 				527ACA391A0ED4B30052037E /* NSSet+ObjectiveSugar.m in Sources */,
 				527ACA431A0ED4C30052037E /* NSManagedObject+ActiveRecord.m in Sources */,
 				527ACA351A0ED4B30052037E /* NSArray+ObjectiveSugar.m in Sources */,
+				525782011A0EDB6100FFC7E1 /* CourseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
