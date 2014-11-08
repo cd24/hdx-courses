@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		527ACA351A0ED4B30052037E /* NSArray+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA291A0ED4B30052037E /* NSArray+ObjectiveSugar.m */; };
+		527ACA361A0ED4B30052037E /* NSDictionary+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA2B1A0ED4B30052037E /* NSDictionary+ObjectiveSugar.m */; };
+		527ACA371A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA2D1A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m */; };
+		527ACA381A0ED4B30052037E /* NSNumber+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA2F1A0ED4B30052037E /* NSNumber+ObjectiveSugar.m */; };
+		527ACA391A0ED4B30052037E /* NSSet+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA311A0ED4B30052037E /* NSSet+ObjectiveSugar.m */; };
+		527ACA3A1A0ED4B30052037E /* NSString+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA331A0ED4B30052037E /* NSString+ObjectiveSugar.m */; };
+		527ACA421A0ED4C30052037E /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA3C1A0ED4C30052037E /* CoreDataManager.m */; };
+		527ACA431A0ED4C30052037E /* NSManagedObject+ActiveRecord.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA3E1A0ED4C30052037E /* NSManagedObject+ActiveRecord.m */; };
+		527ACA441A0ED4C30052037E /* NSManagedObject+Mappings.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA401A0ED4C30052037E /* NSManagedObject+Mappings.m */; };
 		528D81171A09E9E7008DADF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D81161A09E9E7008DADF2 /* AppDelegate.swift */; };
 		528D811A1A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 528D81181A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodeld */; };
 		528D811C1A09E9E7008DADF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D811B1A09E9E7008DADF2 /* ViewController.swift */; };
@@ -27,6 +36,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		527ACA271A0ED4B20052037E /* Hendrix Course Scheduler-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hendrix Course Scheduler-Bridging-Header.h"; sourceTree = "<group>"; };
+		527ACA281A0ED4B30052037E /* NSArray+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ObjectiveSugar.h"; sourceTree = "<group>"; };
+		527ACA291A0ED4B30052037E /* NSArray+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ObjectiveSugar.m"; sourceTree = "<group>"; };
+		527ACA2A1A0ED4B30052037E /* NSDictionary+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+ObjectiveSugar.h"; sourceTree = "<group>"; };
+		527ACA2B1A0ED4B30052037E /* NSDictionary+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+ObjectiveSugar.m"; sourceTree = "<group>"; };
+		527ACA2C1A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+ObjectiveSugar.h"; sourceTree = "<group>"; };
+		527ACA2D1A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+ObjectiveSugar.m"; sourceTree = "<group>"; };
+		527ACA2E1A0ED4B30052037E /* NSNumber+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+ObjectiveSugar.h"; sourceTree = "<group>"; };
+		527ACA2F1A0ED4B30052037E /* NSNumber+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+ObjectiveSugar.m"; sourceTree = "<group>"; };
+		527ACA301A0ED4B30052037E /* NSSet+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSSet+ObjectiveSugar.h"; sourceTree = "<group>"; };
+		527ACA311A0ED4B30052037E /* NSSet+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSSet+ObjectiveSugar.m"; sourceTree = "<group>"; };
+		527ACA321A0ED4B30052037E /* NSString+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+ObjectiveSugar.h"; sourceTree = "<group>"; };
+		527ACA331A0ED4B30052037E /* NSString+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+ObjectiveSugar.m"; sourceTree = "<group>"; };
+		527ACA341A0ED4B30052037E /* ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveSugar.h; sourceTree = "<group>"; };
+		527ACA3B1A0ED4C30052037E /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		527ACA3C1A0ED4C30052037E /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		527ACA3D1A0ED4C30052037E /* NSManagedObject+ActiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+ActiveRecord.h"; sourceTree = "<group>"; };
+		527ACA3E1A0ED4C30052037E /* NSManagedObject+ActiveRecord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+ActiveRecord.m"; sourceTree = "<group>"; };
+		527ACA3F1A0ED4C30052037E /* NSManagedObject+Mappings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+Mappings.h"; sourceTree = "<group>"; };
+		527ACA401A0ED4C30052037E /* NSManagedObject+Mappings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+Mappings.m"; sourceTree = "<group>"; };
+		527ACA411A0ED4C30052037E /* ObjectiveRecord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveRecord.h; sourceTree = "<group>"; };
 		528D81111A09E9E7008DADF2 /* Hendrix Course Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hendrix Course Scheduler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		528D81151A09E9E7008DADF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		528D81161A09E9E7008DADF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +88,61 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		527ACA221A0ED4010052037E /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		527ACA231A0ED40C0052037E /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		527ACA241A0ED4160052037E /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		527ACA251A0ED4770052037E /* Objective Sugar */ = {
+			isa = PBXGroup;
+			children = (
+				527ACA281A0ED4B30052037E /* NSArray+ObjectiveSugar.h */,
+				527ACA291A0ED4B30052037E /* NSArray+ObjectiveSugar.m */,
+				527ACA2A1A0ED4B30052037E /* NSDictionary+ObjectiveSugar.h */,
+				527ACA2B1A0ED4B30052037E /* NSDictionary+ObjectiveSugar.m */,
+				527ACA2C1A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.h */,
+				527ACA2D1A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m */,
+				527ACA2E1A0ED4B30052037E /* NSNumber+ObjectiveSugar.h */,
+				527ACA2F1A0ED4B30052037E /* NSNumber+ObjectiveSugar.m */,
+				527ACA301A0ED4B30052037E /* NSSet+ObjectiveSugar.h */,
+				527ACA311A0ED4B30052037E /* NSSet+ObjectiveSugar.m */,
+				527ACA321A0ED4B30052037E /* NSString+ObjectiveSugar.h */,
+				527ACA331A0ED4B30052037E /* NSString+ObjectiveSugar.m */,
+				527ACA341A0ED4B30052037E /* ObjectiveSugar.h */,
+			);
+			name = "Objective Sugar";
+			sourceTree = "<group>";
+		};
+		527ACA261A0ED47E0052037E /* Objective Record */ = {
+			isa = PBXGroup;
+			children = (
+				527ACA3B1A0ED4C30052037E /* CoreDataManager.h */,
+				527ACA3C1A0ED4C30052037E /* CoreDataManager.m */,
+				527ACA3D1A0ED4C30052037E /* NSManagedObject+ActiveRecord.h */,
+				527ACA3E1A0ED4C30052037E /* NSManagedObject+ActiveRecord.m */,
+				527ACA3F1A0ED4C30052037E /* NSManagedObject+Mappings.h */,
+				527ACA401A0ED4C30052037E /* NSManagedObject+Mappings.m */,
+				527ACA411A0ED4C30052037E /* ObjectiveRecord.h */,
+			);
+			name = "Objective Record";
+			sourceTree = "<group>";
+		};
 		528D81081A09E9E7008DADF2 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +164,11 @@
 		528D81131A09E9E7008DADF2 /* Hendrix Course Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				527ACA261A0ED47E0052037E /* Objective Record */,
+				527ACA251A0ED4770052037E /* Objective Sugar */,
+				527ACA241A0ED4160052037E /* Core Data */,
+				527ACA231A0ED40C0052037E /* View Controllers */,
+				527ACA221A0ED4010052037E /* Data */,
 				528D81161A09E9E7008DADF2 /* AppDelegate.swift */,
 				528D811B1A09E9E7008DADF2 /* ViewController.swift */,
 				528D811D1A09E9E7008DADF2 /* Main.storyboard */,
@@ -93,6 +183,7 @@
 		528D81141A09E9E7008DADF2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				527ACA271A0ED4B20052037E /* Hendrix Course Scheduler-Bridging-Header.h */,
 				528D81151A09E9E7008DADF2 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -216,8 +307,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				528D811C1A09E9E7008DADF2 /* ViewController.swift in Sources */,
+				527ACA381A0ED4B30052037E /* NSNumber+ObjectiveSugar.m in Sources */,
+				527ACA421A0ED4C30052037E /* CoreDataManager.m in Sources */,
 				528D81171A09E9E7008DADF2 /* AppDelegate.swift in Sources */,
 				528D811A1A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodeld in Sources */,
+				527ACA361A0ED4B30052037E /* NSDictionary+ObjectiveSugar.m in Sources */,
+				527ACA3A1A0ED4B30052037E /* NSString+ObjectiveSugar.m in Sources */,
+				527ACA371A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m in Sources */,
+				527ACA441A0ED4C30052037E /* NSManagedObject+Mappings.m in Sources */,
+				527ACA391A0ED4B30052037E /* NSSet+ObjectiveSugar.m in Sources */,
+				527ACA431A0ED4C30052037E /* NSManagedObject+ActiveRecord.m in Sources */,
+				527ACA351A0ED4B30052037E /* NSArray+ObjectiveSugar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,9 +442,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Hendrix Course Scheduler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hendrix Course Scheduler/Hendrix Course Scheduler-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -352,9 +455,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Hendrix Course Scheduler/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Hendrix Course Scheduler/Hendrix Course Scheduler-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -411,6 +516,7 @@
 				528D81351A09E9E7008DADF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		528D81361A09E9E7008DADF2 /* Build configuration list for PBXNativeTarget "Hendrix Course SchedulerTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +525,7 @@
 				528D81381A09E9E7008DADF2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
