@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		525781F11A0ED66700FFC7E1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781F01A0ED66700FFC7E1 /* CoreData.framework */; };
+		525781F31A0ED68000FFC7E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781F21A0ED68000FFC7E1 /* UIKit.framework */; };
+		525781F51A0ED68A00FFC7E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781F41A0ED68A00FFC7E1 /* Foundation.framework */; };
+		525781F71A0ED6DD00FFC7E1 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D81221A09E9E7008DADF2 /* LaunchScreen.xib */; };
+		525781F81A0ED6E900FFC7E1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528D811D1A09E9E7008DADF2 /* Main.storyboard */; };
+		525781FA1A0ED72E00FFC7E1 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781F91A0ED72E00FFC7E1 /* MobileCoreServices.framework */; };
+		525781FC1A0ED73E00FFC7E1 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781FB1A0ED73E00FFC7E1 /* SystemConfiguration.framework */; };
 		527ACA351A0ED4B30052037E /* NSArray+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA291A0ED4B30052037E /* NSArray+ObjectiveSugar.m */; };
 		527ACA361A0ED4B30052037E /* NSDictionary+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA2B1A0ED4B30052037E /* NSDictionary+ObjectiveSugar.m */; };
 		527ACA371A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m in Sources */ = {isa = PBXBuildFile; fileRef = 527ACA2D1A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m */; };
@@ -19,9 +26,7 @@
 		528D81171A09E9E7008DADF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D81161A09E9E7008DADF2 /* AppDelegate.swift */; };
 		528D811A1A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 528D81181A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodeld */; };
 		528D811C1A09E9E7008DADF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D811B1A09E9E7008DADF2 /* ViewController.swift */; };
-		528D811F1A09E9E7008DADF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528D811D1A09E9E7008DADF2 /* Main.storyboard */; };
 		528D81211A09E9E7008DADF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528D81201A09E9E7008DADF2 /* Images.xcassets */; };
-		528D81241A09E9E7008DADF2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 528D81221A09E9E7008DADF2 /* LaunchScreen.xib */; };
 		528D81301A09E9E7008DADF2 /* Hendrix_Course_SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D812F1A09E9E7008DADF2 /* Hendrix_Course_SchedulerTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +41,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		525781F01A0ED66700FFC7E1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		525781F21A0ED68000FFC7E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		525781F41A0ED68A00FFC7E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		525781F91A0ED72E00FFC7E1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		525781FB1A0ED73E00FFC7E1 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		527ACA271A0ED4B20052037E /* Hendrix Course Scheduler-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Hendrix Course Scheduler-Bridging-Header.h"; sourceTree = "<group>"; };
 		527ACA281A0ED4B30052037E /* NSArray+ObjectiveSugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+ObjectiveSugar.h"; sourceTree = "<group>"; };
 		527ACA291A0ED4B30052037E /* NSArray+ObjectiveSugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+ObjectiveSugar.m"; sourceTree = "<group>"; };
@@ -75,6 +85,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				525781FC1A0ED73E00FFC7E1 /* SystemConfiguration.framework in Frameworks */,
+				525781FA1A0ED72E00FFC7E1 /* MobileCoreServices.framework in Frameworks */,
+				525781F51A0ED68A00FFC7E1 /* Foundation.framework in Frameworks */,
+				525781F31A0ED68000FFC7E1 /* UIKit.framework in Frameworks */,
+				525781F11A0ED66700FFC7E1 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +103,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		525781FD1A0ED7B200FFC7E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				525781FB1A0ED73E00FFC7E1 /* SystemConfiguration.framework */,
+				525781F91A0ED72E00FFC7E1 /* MobileCoreServices.framework */,
+				525781F41A0ED68A00FFC7E1 /* Foundation.framework */,
+				525781F21A0ED68000FFC7E1 /* UIKit.framework */,
+				525781F01A0ED66700FFC7E1 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		527ACA221A0ED4010052037E /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +191,7 @@
 		528D81131A09E9E7008DADF2 /* Hendrix Course Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				525781FD1A0ED7B200FFC7E1 /* Frameworks */,
 				527ACA261A0ED47E0052037E /* Objective Record */,
 				527ACA251A0ED4770052037E /* Objective Sugar */,
 				527ACA241A0ED4160052037E /* Core Data */,
@@ -286,9 +314,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528D811F1A09E9E7008DADF2 /* Main.storyboard in Resources */,
-				528D81241A09E9E7008DADF2 /* LaunchScreen.xib in Resources */,
 				528D81211A09E9E7008DADF2 /* Images.xcassets in Resources */,
+				525781F71A0ED6DD00FFC7E1 /* LaunchScreen.xib in Resources */,
+				525781F81A0ED6E900FFC7E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

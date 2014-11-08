@@ -7,6 +7,7 @@
 //
 
 // For an overview see http://cocoadocs.org/docsets/ObjectiveSugar/
+#import <Foundation/Foundation.h>
 
 @interface NSArray (ObjectiveSugar)
 
