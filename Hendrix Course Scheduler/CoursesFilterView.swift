@@ -13,10 +13,21 @@ class CoursesFilterView: UITableViewController {
     var criteria: Dictionary<String, Array<String>>?
     var criteria_keys : Array<String>?
 
+    override init(style: UITableViewStyle) {
+        super.init(style: style)
+    }
 
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder:aDecoder)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Courses View"
+        self.title = "Filters"
         courses = []
         criteria = Dictionary<String, Array<String>>()
         criteria_keys = criteria?.keys.array

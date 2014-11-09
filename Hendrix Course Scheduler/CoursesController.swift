@@ -15,14 +15,14 @@ class CoursesController: UIViewController {
     var courses : Array<AnyObject>
    
     override init() {
-        left_view = CoursesFilterView()
+        left_view = CoursesFilterView(style: UITableViewStyle.Grouped)
         right_view = CourseViewController()
         courses = Array<AnyObject>()
         super.init()
     }
 
     required init(coder aDecoder: NSCoder) {
-        left_view = CoursesFilterView()
+        left_view = CoursesFilterView(style:UITableViewStyle.Grouped)
         right_view = CourseViewController()
         courses = Array<AnyObject>()
         super.init(coder: aDecoder)
@@ -36,11 +36,17 @@ class CoursesController: UIViewController {
         
         self.view.backgroundColor = UIColor.orangeColor()
         
-        left_view.view.frame = CGRectMake(screen_width * 0.01, screen_height * 0.09, screen_width * 0.20, screen_height * 0.90)
-        right_view.view.frame = CGRectMake(screen_width * 0.22, screen_height * 0.09, screen_width * 0.77, screen_height * 0.90)
+        var left_controller = UINavigationController()
+        var right_controller = UINavigationController()
         
-        self.view.addSubview(left_view.view)
-        self.view.addSubview(right_view.view)
+        left_controller.view.frame = CGRectMake(screen_width * 0.01, screen_height * 0.02, screen_width * 0.20, screen_height * 0.97)
+        right_controller.view.frame = CGRectMake(screen_width * 0.22, screen_height * 0.02, screen_width * 0.77, screen_height * 0.97)
+        
+        left_controller.setViewControllers([left_view], animated: false)
+        right_controller.setViewControllers([right_view], animated: false)
+        
+        self.view.addSubview(left_controller.view)
+        self.view.addSubview(right_controller.view)
         
         // Do any additional setup after loading the view, typically from a nib.
     }
