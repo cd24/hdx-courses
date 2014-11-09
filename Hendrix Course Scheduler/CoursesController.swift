@@ -9,13 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var left_view : UIView;
-    var right_view : UIView;
-
+    var left_view : CoursesFilterView
+    var right_view : CourseViewController
+    var courses : Array<AnyObject>
+   
     required init(coder aDecoder: NSCoder) {
-        left_view = UIView();
-        right_view = UIView();
-        super.init();
+        left_view = CoursesFilterView()
+        right_view = CourseViewController()
+        courses = Array<AnyObject>()
+        super.init()
     }
     
     
@@ -29,7 +31,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    func update_with_filter(criteria: String){
+        //filter
+    }
+    
+    func add_course(course: AnyObject){
+        courses.append(course)
+        //send message to left controller
+    }
 }
 

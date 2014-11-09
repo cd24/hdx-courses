@@ -9,6 +9,17 @@
 import UIKit
 
 class CoursesFilterView: UITableViewController {
+    var courses : Array<AnyObject>
+    var criteria: Dictionary<String, Array<String>>
+    var criteria_keys : Array<String>
+    
+    required init(coder aDecoder: NSCoder) {
+        courses = []
+        criteria = Dictionary<String, Array<String>>()
+        criteria_keys = criteria.keys.array
+        criteria_keys.sort { $0 < $1 }
+        super.init()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +48,10 @@ class CoursesFilterView: UITableViewController {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         if section == 0 {
-            return 6
+            return criteria_keys.count
         }
         else if section == 1 {
-            return 4
+            return courses.count
         }
         return 0
     }
@@ -49,7 +60,21 @@ class CoursesFilterView: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
-        // Configure the cell...
+        if indexPath.section == 0 {
+            var title = criteria_keys[indexPath.row]
+            var result = criteria[criteria_keys[0]]
+            cell.textLabel.text = String(format: "%s : %s", title, result!)
+        }
+        if indexPath.section == 1 {
+            var title = ""
+            if indexPath.section < courses.count - 1 {
+                title = courses[indexPath.section] as String
+            }
+            else{
+                title = "No Course"
+            }
+            cell.textLabel.text = title
+        }
 
         return cell
     }
@@ -73,6 +98,8 @@ class CoursesFilterView: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
+    
+    
     
 
     /*
