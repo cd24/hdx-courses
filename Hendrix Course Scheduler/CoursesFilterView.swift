@@ -9,26 +9,25 @@
 import UIKit
 
 class CoursesFilterView: UITableViewController {
-    var courses : Array<AnyObject>
-    var criteria: Dictionary<String, Array<String>>
-    var criteria_keys : Array<String>
-    
-    required init(coder aDecoder: NSCoder) {
-        courses = []
-        criteria = Dictionary<String, Array<String>>()
-        criteria_keys = criteria.keys.array
-        criteria_keys.sort { $0 < $1 }
-        super.init()
-    }
+    var courses : Array<AnyObject>?
+    var criteria: Dictionary<String, Array<String>>?
+    var criteria_keys : Array<String>?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.title = "Courses View"
+        courses = []
+        criteria = Dictionary<String, Array<String>>()
+        criteria_keys = criteria?.keys.array
+        criteria_keys?.sort { $0 < $1 }
+        
+        self.view.layer.borderColor = UIColor.blackColor().CGColor
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,10 +47,11 @@ class CoursesFilterView: UITableViewController {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         if section == 0 {
-            return criteria_keys.count
+            return criteria_keys!.count
         }
         else if section == 1 {
-            return courses.count
+            var count: Int = courses!.count
+            return count
         }
         return 0
     }
@@ -61,14 +61,15 @@ class CoursesFilterView: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
 
         if indexPath.section == 0 {
-            var title = criteria_keys[indexPath.row]
-            var result = criteria[criteria_keys[0]]
+            var title = criteria_keys![indexPath.row]
+            var init_key : String = criteria_keys![0]
+            var result = criteria![init_key]
             cell.textLabel.text = String(format: "%s : %s", title, result!)
         }
         if indexPath.section == 1 {
             var title = ""
-            if indexPath.section < courses.count - 1 {
-                title = courses[indexPath.section] as String
+            if indexPath.section < courses!.count {
+                title = courses![indexPath.section] as String
             }
             else{
                 title = "No Course"
@@ -84,7 +85,7 @@ class CoursesFilterView: UITableViewController {
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Allow editing of the courses, but not the filters.  Section 1.
-        return indexPath.section == 1
+        return indexPath.section == 1 && indexPath.row < courses!.count
     }
     
 
@@ -93,7 +94,8 @@ class CoursesFilterView: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            courses!.removeAtIndex(indexPath.row)
+            self.tableView.reloadData()
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    

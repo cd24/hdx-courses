@@ -8,22 +8,40 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CoursesController: UIViewController {
+    
     var left_view : CoursesFilterView
     var right_view : CourseViewController
     var courses : Array<AnyObject>
    
-    required init(coder aDecoder: NSCoder) {
+    override init() {
         left_view = CoursesFilterView()
         right_view = CourseViewController()
         courses = Array<AnyObject>()
         super.init()
     }
-    
-    
+
+    required init(coder aDecoder: NSCoder) {
+        left_view = CoursesFilterView()
+        right_view = CourseViewController()
+        courses = Array<AnyObject>()
+        super.init(coder: aDecoder)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        let screen_height = screenSize.height
+        let screen_width = screenSize.width
+        
+        self.view.backgroundColor = UIColor.orangeColor()
+        
+        left_view.view.frame = CGRectMake(screen_width * 0.01, screen_height * 0.09, screen_width * 0.20, screen_height * 0.90)
+        right_view.view.frame = CGRectMake(screen_width * 0.22, screen_height * 0.09, screen_width * 0.77, screen_height * 0.90)
+        
+        self.view.addSubview(left_view.view)
+        self.view.addSubview(right_view.view)
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
