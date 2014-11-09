@@ -1,0 +1,5 @@
+#import <Foundation/Foundation.h>
+@interface PodsDummy_Pods_Hendrix_Course_Scheduler_XLForm : NSObject
+@end
+@implementation PodsDummy_Pods_Hendrix_Course_Scheduler_XLForm
+@end
