@@ -33,6 +33,7 @@
 		901422DB974EE1DC67E4FA2B /* libPods-Hendrix Course Scheduler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8968212E83F9800E3243 /* libPods-Hendrix Course Scheduler.a */; };
 		B95D7CEA1A0EF30D0088B988 /* CoursesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B95D7CE81A0EF30D0088B988 /* CoursesData.xcdatamodeld */; };
 		B95D7CED1A0EF33C0088B988 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = B95D7CEC1A0EF33C0088B988 /* Course.m */; };
+		B95D7CEF1A0EF5290088B988 /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D7CEE1A0EF5290088B988 /* NetworkRequests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		B95D7CE91A0EF30D0088B988 /* CoursesData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoursesData.xcdatamodel; sourceTree = "<group>"; };
 		B95D7CEB1A0EF33C0088B988 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
 		B95D7CEC1A0EF33C0088B988 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		B95D7CEE1A0EF5290088B988 /* NetworkRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +227,7 @@
 				525781FD1A0ED7B200FFC7E1 /* Frameworks */,
 				527ACA261A0ED47E0052037E /* Objective Record */,
 				527ACA251A0ED4770052037E /* Objective Sugar */,
+				B95D7CEE1A0EF5290088B988 /* NetworkRequests.swift */,
 				527ACA241A0ED4160052037E /* Core Data */,
 				527ACA231A0ED40C0052037E /* View Controllers */,
 				527ACA221A0ED4010052037E /* Data */,
@@ -414,6 +417,7 @@
 				B95D7CED1A0EF33C0088B988 /* Course.m in Sources */,
 				528D81171A09E9E7008DADF2 /* AppDelegate.swift in Sources */,
 				528D811A1A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodeld in Sources */,
+				B95D7CEF1A0EF5290088B988 /* NetworkRequests.swift in Sources */,
 				527ACA361A0ED4B30052037E /* NSDictionary+ObjectiveSugar.m in Sources */,
 				527ACA3A1A0ED4B30052037E /* NSString+ObjectiveSugar.m in Sources */,
 				527ACA371A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m in Sources */,

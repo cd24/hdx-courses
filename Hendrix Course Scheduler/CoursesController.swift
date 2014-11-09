@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CoursesController: UIViewController {
     var left_view : UIView;
     var right_view : UIView;
 
