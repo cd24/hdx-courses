@@ -45,6 +45,12 @@ class CoursesController: UIViewController {
         left_controller.setViewControllers([left_view], animated: false)
         right_controller.setViewControllers([right_view], animated: false)
         
+        left_controller.view.layer.cornerRadius = 5
+        left_controller.view.layer.masksToBounds = true
+        
+        right_controller.view.layer.cornerRadius = 5
+        right_controller.view.layer.masksToBounds = true
+        
         self.view.addSubview(left_controller.view)
         self.view.addSubview(right_controller.view)
         
