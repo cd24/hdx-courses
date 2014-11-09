@@ -16,14 +16,14 @@ class CoursesController: UIViewController {
    
     override init() {
         left_view = CoursesFilterView(style: UITableViewStyle.Grouped)
-        right_view = CourseViewController()
+        right_view = CourseViewController(style: UITableViewStyle.Grouped)
         courses = Array<AnyObject>()
         super.init()
     }
 
     required init(coder aDecoder: NSCoder) {
         left_view = CoursesFilterView(style:UITableViewStyle.Grouped)
-        right_view = CourseViewController()
+        right_view = CourseViewController(style: UITableViewStyle.Grouped)
         courses = Array<AnyObject>()
         super.init(coder: aDecoder)
     }
@@ -39,8 +39,8 @@ class CoursesController: UIViewController {
         var left_controller = UINavigationController()
         var right_controller = UINavigationController()
         
-        left_controller.view.frame = CGRectMake(screen_width * 0.01, screen_height * 0.02, screen_width * 0.20, screen_height * 0.97)
-        right_controller.view.frame = CGRectMake(screen_width * 0.22, screen_height * 0.02, screen_width * 0.77, screen_height * 0.97)
+        left_controller.view.frame = CGRectMake(5, 20, 320, screen_height - 25)
+        right_controller.view.frame = CGRectMake(330, 20, screen_width - 335, screen_height - 25)
         
         left_controller.setViewControllers([left_view], animated: false)
         right_controller.setViewControllers([right_view], animated: false)

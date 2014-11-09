@@ -9,10 +9,10 @@
 import UIKit
 
 class CoursesFilterView: UITableViewController {
-    var courses : Array<AnyObject>?
-    var criteria: Dictionary<String, Array<String>>?
-    var criteria_keys : Array<String>?
-
+    var courses : Array<Course>!
+    var criteria: Dictionary<String, Array<String>>!
+    var criteria_keys : Array<String>!
+    
     override init(style: UITableViewStyle) {
         super.init(style: style)
     }
@@ -30,9 +30,14 @@ class CoursesFilterView: UITableViewController {
         self.title = "Filters"
         courses = []
         criteria = Dictionary<String, Array<String>>()
-        criteria_keys = criteria?.keys.array
-        criteria_keys?.sort { $0 < $1 }
+        criteria["Professor"] = ["Dr. Gabriel Ferrer", "Dr. Carl Burch", "Dr. Mark Goadrich"]
+        criteria_keys = []
+        for key in criteria.keys {
+            criteria_keys.append(key)
+        }
+        criteria_keys.sort { $0 < $1 }
         
+        self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         self.view.layer.borderColor = UIColor.blackColor().CGColor
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -55,32 +60,29 @@ class CoursesFilterView: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
         if section == 0 {
-            return criteria_keys!.count
+            return criteria_keys.count
         }
         else if section == 1 {
-            var count: Int = courses!.count
-            return count
+            return 5
         }
         return 0
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
         if indexPath.section == 0 {
-            var title = criteria_keys![indexPath.row]
-            var init_key : String = criteria_keys![0]
-            var result = criteria![init_key]
-            cell.textLabel.text = String(format: "%s : %s", title, result!)
+            var title = criteria_keys[indexPath.row]
+            var options = criteria[title]!
+            var value = options[0] as String
+            cell.textLabel.text = "\(title): \(value)"
         }
         if indexPath.section == 1 {
             var title = ""
             if indexPath.section < courses!.count {
-                title = courses![indexPath.section] as String
+                title = courses[indexPath.section].title
             }
             else{
                 title = "No Course"
@@ -91,7 +93,9 @@ class CoursesFilterView: UITableViewController {
         return cell
     }
     
-
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return ["Filter Criteria", "Selected Courses"][section]
+    }
     
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
@@ -112,7 +116,9 @@ class CoursesFilterView: UITableViewController {
         }    
     }
     
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
     
 
     /*
