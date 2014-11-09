@@ -61,7 +61,7 @@
     if (_modelName != nil) return _modelName;
 
     _modelName = [[self appName] copy];
-    return _modelName;
+    return @"CoursesData";
 }
 
 
