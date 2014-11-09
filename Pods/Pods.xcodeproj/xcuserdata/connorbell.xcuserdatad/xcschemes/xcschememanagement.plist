@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-Hendrix Course Scheduler-XLForm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Hendrix Course Scheduler.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,22 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4FF9B98E5E8A27B5D9AEE60E</key>
+		<key>0A570A4014FABAA409C5C8DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6FA95DACFA1E3F9166367D83</key>
+		<key>63AA26A62605D145B992F10C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>765FD156043B3FD8035D6A7E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>B224BCE7B76256D142F65682</key>
+		<key>63F0980FBA3D2DD5AC8D6E8C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

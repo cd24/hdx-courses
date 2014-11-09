@@ -20,11 +20,14 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - XLForm (2.1.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - XLForm (~> 2.1.0)
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  XLForm: 7d6855fe88df37b44ea00da80cc0cf3a945cfb1b
 
 COCOAPODS: 0.34.4

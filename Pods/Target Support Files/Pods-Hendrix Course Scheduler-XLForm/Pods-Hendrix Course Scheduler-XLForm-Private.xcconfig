@@ -1,0 +1,5 @@
+#include "Pods-Hendrix Course Scheduler-XLForm.xcconfig"
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Build" "${PODS_ROOT}/Headers/Build/XLForm" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/XLForm"
+OTHER_LDFLAGS = ${PODS_HENDRIX_COURSE_SCHEDULER_XLFORM_OTHER_LDFLAGS} -ObjC
+PODS_ROOT = ${SRCROOT}
