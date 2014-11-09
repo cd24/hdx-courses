@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524359301A0F089F00025FE0 /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5243592F1A0F089F00025FE0 /* logo.gif */; };
 		525781F11A0ED66700FFC7E1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781F01A0ED66700FFC7E1 /* CoreData.framework */; };
 		525781F31A0ED68000FFC7E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781F21A0ED68000FFC7E1 /* UIKit.framework */; };
 		525781F51A0ED68A00FFC7E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781F41A0ED68A00FFC7E1 /* Foundation.framework */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		0D5A8968212E83F9800E3243 /* libPods-Hendrix Course Scheduler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hendrix Course Scheduler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5243592F1A0F089F00025FE0 /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
 		525781F01A0ED66700FFC7E1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		525781F21A0ED68000FFC7E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		525781F41A0ED68A00FFC7E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -244,6 +246,7 @@
 		528D81141A09E9E7008DADF2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5243592F1A0F089F00025FE0 /* logo.gif */,
 				527ACA271A0ED4B20052037E /* Hendrix Course Scheduler-Bridging-Header.h */,
 				528D81151A09E9E7008DADF2 /* Info.plist */,
 			);
@@ -358,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				528D81211A09E9E7008DADF2 /* Images.xcassets in Resources */,
+				524359301A0F089F00025FE0 /* logo.gif in Resources */,
 				525781F71A0ED6DD00FFC7E1 /* LaunchScreen.xib in Resources */,
 				525781F81A0ED6E900FFC7E1 /* Main.storyboard in Resources */,
 			);

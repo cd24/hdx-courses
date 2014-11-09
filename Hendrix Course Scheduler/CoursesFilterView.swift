@@ -31,6 +31,7 @@ class CoursesFilterView: UITableViewController {
         courses = []
         criteria = Dictionary<String, Array<String>>()
         criteria["Professor"] = ["Dr. Gabriel Ferrer", "Dr. Carl Burch", "Dr. Mark Goadrich"]
+        criteria["Department"] = ["CSCI"]
         criteria_keys = []
         for key in criteria.keys {
             criteria_keys.append(key)
