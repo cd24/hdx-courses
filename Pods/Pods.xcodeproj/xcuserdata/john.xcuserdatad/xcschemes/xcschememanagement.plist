@@ -8,15 +8,39 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
+		<key>Pods-Hendrix Course Scheduler-XLForm.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Pods-Hendrix Course Scheduler.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0A570A4014FABAA409C5C8DB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>63AA26A62605D145B992F10C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>63F0980FBA3D2DD5AC8D6E8C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>6FA95DACFA1E3F9166367D83</key>
 		<dict>
 			<key>primary</key>
