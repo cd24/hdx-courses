@@ -10,8 +10,8 @@ import UIKit
 
 class CoursesController: UIViewController {
     
-    var left_view : CoursesFilterView
-    var right_view : CourseViewController
+    var left_view : CoursesFilterView!
+    var right_view : CourseViewController!
     var courses : Array<AnyObject>
    
     override init() {
@@ -36,23 +36,25 @@ class CoursesController: UIViewController {
         
         self.view.backgroundColor = UIColor.orangeColor()
         
-        var left_controller = UINavigationController()
-        var right_controller = UINavigationController()
+        var left_controller = UINavigationController(rootViewController: left_view)
+        var right_controller = UINavigationController(rootViewController: right_view)
         
         left_controller.view.frame = CGRectMake(5, 20, 320, screen_height - 25)
         right_controller.view.frame = CGRectMake(330, 20, screen_width - 335, screen_height - 25)
         
-        left_controller.setViewControllers([left_view], animated: false)
-        right_controller.setViewControllers([right_view], animated: false)
+        //left_controller.setViewControllers([left_view], animated: false)
+        //right_controller.setViewControllers([right_view], animated: false)
         
         left_controller.view.layer.cornerRadius = 5
         left_controller.view.layer.masksToBounds = true
         
         right_controller.view.layer.cornerRadius = 5
         right_controller.view.layer.masksToBounds = true
-        
+        self.addChildViewController(left_controller)
+        self.addChildViewController(right_controller)
         self.view.addSubview(left_controller.view)
         self.view.addSubview(right_controller.view)
+        
         
         // Do any additional setup after loading the view, typically from a nib.
     }
