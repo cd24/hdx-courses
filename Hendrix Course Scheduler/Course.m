@@ -2,12 +2,13 @@
 //  Course.m
 //  Hendrix Course Scheduler
 //
-//  Created by Connor Bell on 11/10/14.
+//  Created by Connor Bell on 11/11/14.
 //  Copyright (c) 2014 Survey Dream. All rights reserved.
 //
 
 #import "Course.h"
 #import "Instructor.h"
+#import "Schedule.h"
 #import "SubjectCode.h"
 
 
@@ -26,5 +27,6 @@
 @dynamic capacity;
 @dynamic subjectCode;
 @dynamic instructor;
+@dynamic schedules;
 
 @end

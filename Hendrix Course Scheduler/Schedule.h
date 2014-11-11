@@ -1,5 +1,5 @@
 //
-//  Instructor.h
+//  Schedule.h
 //  Hendrix Course Scheduler
 //
 //  Created by Connor Bell on 11/11/14.
@@ -11,13 +11,15 @@
 
 @class Course;
 
-@interface Instructor : NSManagedObject
+@interface Schedule : NSManagedObject
 
 @property (nonatomic, retain) NSString * name;
+@property (nonatomic, retain) NSString * year;
+@property (nonatomic, retain) NSString * term;
 @property (nonatomic, retain) NSSet *courses;
 @end
 
-@interface Instructor (CoreDataGeneratedAccessors)
+@interface Schedule (CoreDataGeneratedAccessors)
 
 - (void)addCoursesObject:(Course *)value;
 - (void)removeCoursesObject:(Course *)value;

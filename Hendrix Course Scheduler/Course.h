@@ -2,14 +2,14 @@
 //  Course.h
 //  Hendrix Course Scheduler
 //
-//  Created by Connor Bell on 11/10/14.
+//  Created by Connor Bell on 11/11/14.
 //  Copyright (c) 2014 Survey Dream. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Instructor, SubjectCode;
+@class Instructor, Schedule, SubjectCode;
 
 @interface Course : NSManagedObject
 
@@ -26,5 +26,14 @@
 @property (nonatomic, retain) NSNumber * capacity;
 @property (nonatomic, retain) SubjectCode *subjectCode;
 @property (nonatomic, retain) Instructor *instructor;
+@property (nonatomic, retain) NSSet *schedules;
+@end
+
+@interface Course (CoreDataGeneratedAccessors)
+
+- (void)addSchedulesObject:(Schedule *)value;
+- (void)removeSchedulesObject:(Schedule *)value;
+- (void)addSchedules:(NSSet *)values;
+- (void)removeSchedules:(NSSet *)values;
 
 @end
