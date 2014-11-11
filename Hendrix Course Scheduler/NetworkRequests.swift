@@ -22,12 +22,22 @@ func printData(){
     println(course.startTime)
     println(course.term)
     println(course.year)
-    println(": \(course.building)")
+    println(course.building)
+    println(course.instructor.name)
+    for i in course.instructor.courses{
+        println((i as Course).title)
+    }
+    println(course.subjectCode.name)
+    for i in course.subjectCode.courses{
+        println((i as Course).title)
+    }
     //}
 }
 
 func loadCourses(){
     Course.deleteAll()
+    SubjectCode.deleteAll()
+    Instructor.deleteAll()
     var op = AFHTTPRequestOperationManager()
     op.requestSerializer = AFHTTPRequestSerializer() as AFHTTPRequestSerializer
     op.requestSerializer.setValue("application/atomsvc+xml;q=0.8, application/json;odata=fullmetadata;q=0.7, application/json;q=0.5, */*;q=0.1", forHTTPHeaderField: "Accept")
@@ -82,6 +92,45 @@ func loadCourses(){
                     }
                     if let year = c["Year"] as? String{
                         course.year = year
+                    }
+                    course.save()
+                    if let instructor = c["Instructors"] as? String{
+                        if let results = (Instructor.whereT("name == \"\(instructor)\"", limit: 1)){
+                            if results.count > 0{
+                                
+                                var i = results[0] as Instructor
+                                i.name = instructor
+                                i.addCoursesObject(course)
+                                course.instructor = i
+                                i.save()
+                            }
+                            else{
+                                var i = Instructor.create() as Instructor
+                                i.name = instructor
+                                i.addCoursesObject(course)
+                                course.instructor = i
+                                i.save()
+                            }
+                        }
+                    }
+                    if let subject = c["SubjectCode"] as? String{
+                        if let results = (SubjectCode.whereT("name == \"\(subject)\"", limit: 1)){
+                            if results.count > 0{
+                                
+                                var i = results[0] as SubjectCode
+                                i.name = subject
+                                i.addCoursesObject(course)
+                                course.subjectCode = i
+                                i.save()
+                            }
+                            else{
+                                var i = SubjectCode.create() as SubjectCode
+                                i.name = subject
+                                i.addCoursesObject(course)
+                                course.subjectCode = i
+                                i.save()
+                            }
+                        }
                     }
                     course.save()
                 }

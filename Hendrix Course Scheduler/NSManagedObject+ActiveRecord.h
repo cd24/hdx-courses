@@ -28,9 +28,9 @@
 
 /**
  The default context (as defined on the @c CoreDataManager singleton).
-
+ 
  @see -[CoreDataManager managedObjectContext]
-
+ 
  @return A managed object context.
  */
 + (NSManagedObjectContext *)defaultContext;
@@ -52,14 +52,14 @@
 
 + (NSArray *)all;
 + (NSArray *)allWithOrder:(id)order;
-+ (NSArray *)where:(id)condition, ...;
-+ (NSArray *)where:(id)condition order:(id)order;
-+ (NSArray *)where:(id)condition limit:(NSNumber *)limit;
-+ (NSArray *)where:(id)condition order:(id)order limit:(NSNumber *)limit;
++ (NSArray *)whereT:(id)condition, ...;
++ (NSArray *)whereT:(id)condition order:(id)order;
++ (NSArray *)whereT:(id)condition limit:(NSNumber *)limit;
++ (NSArray *)whereT:(id)condition order:(id)order limit:(NSNumber *)limit;
 + (instancetype)findOrCreate:(NSDictionary *)attributes;
 + (instancetype)find:(id)condition, ...;
 + (NSUInteger)count;
-+ (NSUInteger)countWhere:(id)condition, ...;
++ (NSUInteger)countwhereT:(id)condition, ...;
 
 #pragma mark - Custom Context
 
@@ -70,14 +70,14 @@
 
 + (NSArray *)allInContext:(NSManagedObjectContext *)context;
 + (NSArray *)allInContext:(NSManagedObjectContext *)context order:(id)order;
-+ (NSArray *)where:(id)condition inContext:(NSManagedObjectContext *)context;
-+ (NSArray *)where:(id)condition inContext:(NSManagedObjectContext *)context order:(id)order;
-+ (NSArray *)where:(id)condition inContext:(NSManagedObjectContext *)context limit:(NSNumber *)limit;
-+ (NSArray *)where:(id)condition inContext:(NSManagedObjectContext *)context order:(id)order limit:(NSNumber *)limit;
++ (NSArray *)whereT:(id)condition inContext:(NSManagedObjectContext *)context;
++ (NSArray *)whereT:(id)condition inContext:(NSManagedObjectContext *)context order:(id)order;
++ (NSArray *)whereT:(id)condition inContext:(NSManagedObjectContext *)context limit:(NSNumber *)limit;
++ (NSArray *)whereT:(id)condition inContext:(NSManagedObjectContext *)context order:(id)order limit:(NSNumber *)limit;
 + (instancetype)findOrCreate:(NSDictionary *)properties inContext:(NSManagedObjectContext *)context;
 + (instancetype)find:(id)condition inContext:(NSManagedObjectContext *)context;
 + (NSUInteger)countInContext:(NSManagedObjectContext *)context;
-+ (NSUInteger)countWhere:(id)condition inContext:(NSManagedObjectContext *)context;
++ (NSUInteger)countwhereT:(id)condition inContext:(NSManagedObjectContext *)context;
 
 #pragma mark - Naming
 
