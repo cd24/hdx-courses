@@ -7,4 +7,6 @@
 #import "AFNetworking.h"
 
 #import "Course.h"
+#import "Instructor.h"
+#import "SubjectCode.h"
 #import "XLForm.h"
