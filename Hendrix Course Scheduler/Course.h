@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSString * building;
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) NSString * days;
-@property (nonatomic, retain) NSNumber * courseCode;
+@property (nonatomic, retain) NSString * courseCode;
 @property (nonatomic, retain) NSDate * startTime;
 @property (nonatomic, retain) NSDate * endTime;
 @property (nonatomic, retain) NSString * catalogDescription;

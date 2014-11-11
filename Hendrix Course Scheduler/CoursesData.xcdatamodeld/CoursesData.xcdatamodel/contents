@@ -4,7 +4,7 @@
         <attribute name="building" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="capacity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="catalogDescription" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="courseCode" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="courseCode" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="currentEnrollment" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="days" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="endTime" optional="YES" attributeType="Date" syncable="YES"/>
