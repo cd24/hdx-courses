@@ -30,6 +30,9 @@ class CoursesController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        left_view.parent = self
+        right_view.parent = self
         let screenSize: CGRect = UIScreen.mainScreen().bounds
         let screen_height = screenSize.height
         let screen_width = screenSize.width

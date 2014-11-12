@@ -12,6 +12,7 @@ class CoursesFilterView: UITableViewController {
     var courses : Array<Course>!
     var criteria: Dictionary<String, Array<String>>!
     var criteria_keys : Array<String>!
+    var parent: CoursesController!
     
     override init(style: UITableViewStyle) {
         super.init(style: style)
@@ -30,8 +31,8 @@ class CoursesFilterView: UITableViewController {
         self.title = "Filters"
         courses = []
         criteria = Dictionary<String, Array<String>>()
-        criteria["Professor"] = ["Dr. Gabriel Ferrer", "Dr. Carl Burch", "Dr. Mark Goadrich"]
-        criteria["Department"] = ["CSCI"]
+        criteria["Professor"] = ["Dr. Gabriel Ferrer", "Dr. Carl Burch", "Dr. Mark Goadrich", "Dr. Mary Richardson", "Dr. Todd Berryman", "Mr. Bell"]
+        criteria["Department"] = ["CSCI", "ENGL", "MATH", "PSCI"]
         criteria_keys = []
         for key in criteria.keys {
             criteria_keys.append(key)
@@ -118,7 +119,25 @@ class CoursesFilterView: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.section == 0 {
+            let option_selector = OptionSelectorView()
+            let options = criteria[criteria_keys[indexPath.row]]!
+            option_selector.setOptions(self, options: options)
+            self.navigationController?.pushViewController(option_selector, animated: true)
+        }
+        else{
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
+    }
+    
+    func set_new_value(new_option: String){
+        let cell = self.tableView.cellForRowAtIndexPath(self.tableView.indexPathForSelectedRow()!)
+        let label = cell?.textLabel.text?.componentsSeparatedByString(":")[0]
+        let new_label = "\(label!): \(new_option)"
+        cell?.textLabel.text = new_label
+        self.dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        parent.update_with_filter(new_label)
     }
     
 
