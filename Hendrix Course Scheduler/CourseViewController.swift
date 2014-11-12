@@ -26,7 +26,15 @@ class CourseViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    func schedule(sender : UIBarButtonItem!){
+        var story = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        var vc = story.instantiateViewControllerWithIdentifier("scheduleChange") as UIViewController
+        var pop = UIPopoverController(contentViewController: vc)
+        pop.presentPopoverFromBarButtonItem(sender, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
+    }
+    func calendar(){
+        (self.navigationController?.parentViewController as CoursesController).switchCalendar()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

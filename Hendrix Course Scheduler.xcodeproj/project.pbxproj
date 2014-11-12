@@ -33,9 +33,14 @@
 		528D81301A09E9E7008DADF2 /* Hendrix_Course_SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D812F1A09E9E7008DADF2 /* Hendrix_Course_SchedulerTests.swift */; };
 		52F97D911A1085F700E28930 /* OptionSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F97D901A1085F700E28930 /* OptionSelectorView.swift */; };
 		901422DB974EE1DC67E4FA2B /* libPods-Hendrix Course Scheduler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8968212E83F9800E3243 /* libPods-Hendrix Course Scheduler.a */; };
+		B92DF70F1A12E13500C8CF57 /* SchedulePopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92DF70E1A12E13500C8CF57 /* SchedulePopoverViewController.swift */; };
 		B95D7CEA1A0EF30D0088B988 /* CoursesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B95D7CE81A0EF30D0088B988 /* CoursesData.xcdatamodeld */; };
-		B95D7CED1A0EF33C0088B988 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = B95D7CEC1A0EF33C0088B988 /* Course.m */; };
 		B95D7CEF1A0EF5290088B988 /* NetworkRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B95D7CEE1A0EF5290088B988 /* NetworkRequests.swift */; };
+		B98F68041A12CA0F00F22D23 /* Instructor.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F68031A12CA0F00F22D23 /* Instructor.m */; };
+		B98F68071A12CA1000F22D23 /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F68061A12CA1000F22D23 /* Schedule.m */; };
+		B98F680A1A12CA1000F22D23 /* SubjectCode.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F68091A12CA1000F22D23 /* SubjectCode.m */; };
+		B98F680D1A12CA1000F22D23 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F680C1A12CA1000F22D23 /* Course.m */; };
+		B98F680F1A12CD5200F22D23 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F680E1A12CD5200F22D23 /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,10 +98,18 @@
 		52F97D901A1085F700E28930 /* OptionSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSelectorView.swift; sourceTree = "<group>"; };
 		60A31B80CCBEF1CABD12056F /* Pods-Hendrix Course Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hendrix Course Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hendrix Course Scheduler/Pods-Hendrix Course Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
 		B7A57FB5FB44A40D6D273D2F /* Pods-Hendrix Course Scheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hendrix Course Scheduler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hendrix Course Scheduler/Pods-Hendrix Course Scheduler.release.xcconfig"; sourceTree = "<group>"; };
+		B92DF70E1A12E13500C8CF57 /* SchedulePopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulePopoverViewController.swift; sourceTree = "<group>"; };
 		B95D7CE91A0EF30D0088B988 /* CoursesData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoursesData.xcdatamodel; sourceTree = "<group>"; };
-		B95D7CEB1A0EF33C0088B988 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		B95D7CEC1A0EF33C0088B988 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		B95D7CEE1A0EF5290088B988 /* NetworkRequests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequests.swift; sourceTree = "<group>"; };
+		B98F68021A12CA0F00F22D23 /* Instructor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Instructor.h; sourceTree = "<group>"; };
+		B98F68031A12CA0F00F22D23 /* Instructor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Instructor.m; sourceTree = "<group>"; };
+		B98F68051A12CA1000F22D23 /* Schedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Schedule.h; sourceTree = "<group>"; };
+		B98F68061A12CA1000F22D23 /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedule.m; sourceTree = "<group>"; };
+		B98F68081A12CA1000F22D23 /* SubjectCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectCode.h; sourceTree = "<group>"; };
+		B98F68091A12CA1000F22D23 /* SubjectCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectCode.m; sourceTree = "<group>"; };
+		B98F680B1A12CA1000F22D23 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		B98F680C1A12CA1000F22D23 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
+		B98F680E1A12CD5200F22D23 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,8 +179,14 @@
 			isa = PBXGroup;
 			children = (
 				B95D7CE81A0EF30D0088B988 /* CoursesData.xcdatamodeld */,
-				B95D7CEB1A0EF33C0088B988 /* Course.h */,
-				B95D7CEC1A0EF33C0088B988 /* Course.m */,
+				B98F680B1A12CA1000F22D23 /* Course.h */,
+				B98F680C1A12CA1000F22D23 /* Course.m */,
+				B98F68081A12CA1000F22D23 /* SubjectCode.h */,
+				B98F68091A12CA1000F22D23 /* SubjectCode.m */,
+				B98F68051A12CA1000F22D23 /* Schedule.h */,
+				B98F68061A12CA1000F22D23 /* Schedule.m */,
+				B98F68021A12CA0F00F22D23 /* Instructor.h */,
+				B98F68031A12CA0F00F22D23 /* Instructor.m */,
 			);
 			name = "Core Data";
 			sourceTree = "<group>";
@@ -421,7 +440,8 @@
 				527ACA381A0ED4B30052037E /* NSNumber+ObjectiveSugar.m in Sources */,
 				B95D7CEA1A0EF30D0088B988 /* CoursesData.xcdatamodeld in Sources */,
 				527ACA421A0ED4C30052037E /* CoreDataManager.m in Sources */,
-				B95D7CED1A0EF33C0088B988 /* Course.m in Sources */,
+				B98F680D1A12CA1000F22D23 /* Course.m in Sources */,
+				B92DF70F1A12E13500C8CF57 /* SchedulePopoverViewController.swift in Sources */,
 				528D81171A09E9E7008DADF2 /* AppDelegate.swift in Sources */,
 				528D811A1A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodeld in Sources */,
 				B95D7CEF1A0EF5290088B988 /* NetworkRequests.swift in Sources */,
@@ -430,9 +450,13 @@
 				527ACA3A1A0ED4B30052037E /* NSString+ObjectiveSugar.m in Sources */,
 				527ACA371A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m in Sources */,
 				527ACA441A0ED4C30052037E /* NSManagedObject+Mappings.m in Sources */,
+				B98F680F1A12CD5200F22D23 /* CalendarViewController.swift in Sources */,
 				525781FF1A0EDA5F00FFC7E1 /* CoursesFilterView.swift in Sources */,
+				B98F68071A12CA1000F22D23 /* Schedule.m in Sources */,
 				527ACA391A0ED4B30052037E /* NSSet+ObjectiveSugar.m in Sources */,
 				527ACA431A0ED4C30052037E /* NSManagedObject+ActiveRecord.m in Sources */,
+				B98F680A1A12CA1000F22D23 /* SubjectCode.m in Sources */,
+				B98F68041A12CA0F00F22D23 /* Instructor.m in Sources */,
 				527ACA351A0ED4B30052037E /* NSArray+ObjectiveSugar.m in Sources */,
 				525782011A0EDB6100FFC7E1 /* CourseViewController.swift in Sources */,
 			);
