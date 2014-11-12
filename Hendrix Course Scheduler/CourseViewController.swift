@@ -14,13 +14,16 @@ class CourseViewController: UITableViewController {
         super.viewDidLoad()
         
         self.title = "Courses"
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Calendar", style: UIBarButtonItemStyle.Plain, target: self, action: "calendar")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
-
+    func calendar(){
+        (self.navigationController?.parentViewController as CoursesController).switchCalendar()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
