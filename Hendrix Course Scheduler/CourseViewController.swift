@@ -15,11 +15,18 @@ class CourseViewController: UITableViewController {
         
         self.title = "Courses"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Calendar", style: UIBarButtonItemStyle.Plain, target: self, action: "calendar")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Schedule", style: UIBarButtonItemStyle.Plain, target: self, action: "schedule:")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    func schedule(sender : UIBarButtonItem!){
+        var story = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        var vc = story.instantiateViewControllerWithIdentifier("scheduleChange") as UIViewController
+        var pop = UIPopoverController(contentViewController: vc)
+        pop.presentPopoverFromBarButtonItem(sender, permittedArrowDirections: UIPopoverArrowDirection.Up, animated: true)
     }
     func calendar(){
         (self.navigationController?.parentViewController as CoursesController).switchCalendar()
