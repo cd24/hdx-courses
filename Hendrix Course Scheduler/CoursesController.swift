@@ -69,8 +69,16 @@ class CoursesController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func update_with_filter(criteria: String){
+    func update_with_filter(criteria: Dictionary<String, String>){
         //filter
+        var parameters = left_view.get_filter_parameters()
+        var courses = Array<Course>()
+        
+        /*
+        TODO: Apply filter criteria to data model
+        */
+        
+        right_view.update_courses(courses)
     }
     
     func add_course(course: AnyObject){

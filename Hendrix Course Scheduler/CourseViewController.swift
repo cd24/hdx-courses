@@ -64,6 +64,11 @@ class CourseViewController: UITableViewController {
 
         return cell
     }
+    
+    func update_courses(courses: Array<Course>){
+        self.courses_display = courses
+        self.tableView.reloadData()
+    }
 
     /*
     // Override to support conditional editing of the table view.

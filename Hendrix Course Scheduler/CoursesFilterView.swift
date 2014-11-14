@@ -31,8 +31,8 @@ class CoursesFilterView: UITableViewController {
         self.title = "Filters"
         courses = []
         criteria = Dictionary<String, Array<String>>()
-        criteria["Professor"] = ["Dr. Gabriel Ferrer", "Dr. Carl Burch", "Dr. Mark Goadrich", "Dr. Mary Richardson", "Dr. Todd Berryman", "Mr. Bell"]
-        criteria["Department"] = ["CSCI", "ENGL", "MATH", "PSCI"]
+        criteria["Professor"] = ["All", "Dr. Gabriel Ferrer", "Dr. Carl Burch", "Dr. Mark Goadrich", "Dr. Mary Richardson", "Dr. Todd Berryman", "Mr. Bell"]
+        criteria["Department"] = ["All", "CSCI", "ENGL", "MATH", "PSCI"]
         criteria_keys = []
         for key in criteria.keys {
             criteria_keys.append(key)
@@ -78,7 +78,7 @@ class CoursesFilterView: UITableViewController {
         if indexPath.section == 0 {
             var title = criteria_keys[indexPath.row]
             var options = criteria[title]!
-            var value = options[0] as String
+            var value = options[0]
             cell.textLabel.text = "\(title): \(value)"
         }
         if indexPath.section == 1 {
@@ -130,14 +130,25 @@ class CoursesFilterView: UITableViewController {
         }
     }
     
-    func set_new_value(new_option: String){
-        let cell = self.tableView.cellForRowAtIndexPath(self.tableView.indexPathForSelectedRow()!)
-        let label = cell?.textLabel.text?.componentsSeparatedByString(":")[0]
-        let new_label = "\(label!): \(new_option)"
-        cell?.textLabel.text = new_label
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func set_new_value(label: String){
+        let cell = self.tableView.cellForRowAtIndexPath(self.tableView.indexPathForSelectedRow()!)!
+        let key_str = cell.textLabel.text?.componentsSeparatedByString(":")[0]
+        cell.textLabel.text = key_str! + ": " + label
+        self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow()!, animated: true)
         self.navigationController?.popToRootViewControllerAnimated(true)
-        parent.update_with_filter(new_label)
+    }
+    
+    func get_filter_parameters() -> Dictionary<String, String>{
+        var params = Dictionary<String, String>()
+        for i in 0...self.tableView.numberOfRowsInSection(0){
+            let idxPath = NSIndexPath(forRow: i, inSection: 0)
+            let cell = self.tableView.cellForRowAtIndexPath(idxPath)!
+            let key = cell.textLabel.text?.componentsSeparatedByString(":")[0]
+            let value = cell.textLabel.text?.componentsSeparatedByString(":")[1]
+            params[key!] = value!
+        }
+        println(params)
+        return params
     }
     
 
