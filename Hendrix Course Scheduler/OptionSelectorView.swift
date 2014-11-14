@@ -27,7 +27,9 @@ class OptionSelectorView: UITableViewController, UISearchBarDelegate, UISearchDi
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
+    
     
     func setOptions(parent: CoursesFilterView, options: Array<String>){
         self.options = options
@@ -51,7 +53,7 @@ class OptionSelectorView: UITableViewController, UISearchBarDelegate, UISearchDi
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        if tableView == self.searchDisplayController!.searchResultsTableView {
+        if false{// tableView == self.searchDisplayController!.searchResultsTableView {
             return self.filter_options.count
         } else {
             return options.count
@@ -63,7 +65,7 @@ class OptionSelectorView: UITableViewController, UISearchBarDelegate, UISearchDi
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         
         
-        if tableView == self.searchDisplayController!.searchResultsTableView {
+        if false{//tableView == self.searchDisplayController!.searchResultsTableView {
             cell.textLabel.text = filter_options[indexPath.row]
         }
         else {

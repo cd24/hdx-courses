@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		524359301A0F089F00025FE0 /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 5243592F1A0F089F00025FE0 /* logo.gif */; };
+		52568D3E1A12F3E300ADF2DA /* OptionSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52568D3D1A12F3E300ADF2DA /* OptionSelectorView.swift */; };
 		525781F11A0ED66700FFC7E1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781F01A0ED66700FFC7E1 /* CoreData.framework */; };
 		525781F31A0ED68000FFC7E1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781F21A0ED68000FFC7E1 /* UIKit.framework */; };
 		525781F51A0ED68A00FFC7E1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 525781F41A0ED68A00FFC7E1 /* Foundation.framework */; };
@@ -31,7 +32,6 @@
 		528D811C1A09E9E7008DADF2 /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D811B1A09E9E7008DADF2 /* CoursesController.swift */; };
 		528D81211A09E9E7008DADF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528D81201A09E9E7008DADF2 /* Images.xcassets */; };
 		528D81301A09E9E7008DADF2 /* Hendrix_Course_SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D812F1A09E9E7008DADF2 /* Hendrix_Course_SchedulerTests.swift */; };
-		52F97D911A1085F700E28930 /* OptionSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52F97D901A1085F700E28930 /* OptionSelectorView.swift */; };
 		901422DB974EE1DC67E4FA2B /* libPods-Hendrix Course Scheduler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8968212E83F9800E3243 /* libPods-Hendrix Course Scheduler.a */; };
 		B92DF70F1A12E13500C8CF57 /* SchedulePopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92DF70E1A12E13500C8CF57 /* SchedulePopoverViewController.swift */; };
 		B95D7CEA1A0EF30D0088B988 /* CoursesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B95D7CE81A0EF30D0088B988 /* CoursesData.xcdatamodeld */; };
@@ -56,6 +56,7 @@
 /* Begin PBXFileReference section */
 		0D5A8968212E83F9800E3243 /* libPods-Hendrix Course Scheduler.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Hendrix Course Scheduler.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5243592F1A0F089F00025FE0 /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
+		52568D3D1A12F3E300ADF2DA /* OptionSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSelectorView.swift; sourceTree = "<group>"; };
 		525781F01A0ED66700FFC7E1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		525781F21A0ED68000FFC7E1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		525781F41A0ED68A00FFC7E1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -95,7 +96,6 @@
 		528D81291A09E9E7008DADF2 /* Hendrix Course SchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hendrix Course SchedulerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		528D812E1A09E9E7008DADF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		528D812F1A09E9E7008DADF2 /* Hendrix_Course_SchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hendrix_Course_SchedulerTests.swift; sourceTree = "<group>"; };
-		52F97D901A1085F700E28930 /* OptionSelectorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionSelectorView.swift; sourceTree = "<group>"; };
 		60A31B80CCBEF1CABD12056F /* Pods-Hendrix Course Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hendrix Course Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hendrix Course Scheduler/Pods-Hendrix Course Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
 		B7A57FB5FB44A40D6D273D2F /* Pods-Hendrix Course Scheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hendrix Course Scheduler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hendrix Course Scheduler/Pods-Hendrix Course Scheduler.release.xcconfig"; sourceTree = "<group>"; };
 		B92DF70E1A12E13500C8CF57 /* SchedulePopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulePopoverViewController.swift; sourceTree = "<group>"; };
@@ -169,8 +169,10 @@
 			children = (
 				528D811B1A09E9E7008DADF2 /* CoursesController.swift */,
 				525781FE1A0EDA5F00FFC7E1 /* CoursesFilterView.swift */,
+				52568D3D1A12F3E300ADF2DA /* OptionSelectorView.swift */,
 				525782001A0EDB6100FFC7E1 /* CourseViewController.swift */,
-				52F97D901A1085F700E28930 /* OptionSelectorView.swift */,
+				B98F680E1A12CD5200F22D23 /* CalendarViewController.swift */,
+				B92DF70E1A12E13500C8CF57 /* SchedulePopoverViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -444,8 +446,8 @@
 				B92DF70F1A12E13500C8CF57 /* SchedulePopoverViewController.swift in Sources */,
 				528D81171A09E9E7008DADF2 /* AppDelegate.swift in Sources */,
 				528D811A1A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodeld in Sources */,
+				52568D3E1A12F3E300ADF2DA /* OptionSelectorView.swift in Sources */,
 				B95D7CEF1A0EF5290088B988 /* NetworkRequests.swift in Sources */,
-				52F97D911A1085F700E28930 /* OptionSelectorView.swift in Sources */,
 				527ACA361A0ED4B30052037E /* NSDictionary+ObjectiveSugar.m in Sources */,
 				527ACA3A1A0ED4B30052037E /* NSString+ObjectiveSugar.m in Sources */,
 				527ACA371A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m in Sources */,
