@@ -31,7 +31,7 @@ class CoursesFilterView: UITableViewController {
         self.title = "Filters"
         courses = []
         criteria = Dictionary<String, Array<String>>()
-        criteria["Professor"] = ["All", "Dr. Gabriel Ferrer", "Dr. Carl Burch", "Dr. Mark Goadrich", "Dr. Mary Richardson", "Dr. Todd Berryman", "Mr. Bell"]
+        criteria["Instructor"] = ["All", "Dr. Gabriel Ferrer", "Dr. Carl Burch", "Dr. Mark Goadrich", "Dr. Mary Richardson", "Dr. Todd Berryman", "Mr. Bell"]
         criteria["Department"] = ["All", "CSCI", "ENGL", "MATH", "PSCI"]
         criteria_keys = []
         for key in criteria.keys {
@@ -136,11 +136,12 @@ class CoursesFilterView: UITableViewController {
         cell.textLabel.text = key_str! + ": " + label
         self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow()!, animated: true)
         self.navigationController?.popToRootViewControllerAnimated(true)
+        parent.update_with_filter(get_filter_parameters())
     }
     
     func get_filter_parameters() -> Dictionary<String, String>{
         var params = Dictionary<String, String>()
-        for i in 0...self.tableView.numberOfRowsInSection(0){
+        for i in 0..<self.tableView.numberOfRowsInSection(0){
             let idxPath = NSIndexPath(forRow: i, inSection: 0)
             let cell = self.tableView.cellForRowAtIndexPath(idxPath)!
             let key = cell.textLabel.text?.componentsSeparatedByString(":")[0]

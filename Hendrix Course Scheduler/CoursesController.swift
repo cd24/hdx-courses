@@ -69,16 +69,44 @@ class CoursesController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func update_with_filter(criteria: Dictionary<String, String>){
+    func update_with_filter(parameters: Dictionary<String, String>){
         //filter
-        var parameters = left_view.get_filter_parameters()
         var courses = Array<Course>()
-        
+        let keys = parameters.keys.array
+        var filter_string = get_filter_string(parameters, value: keys[0])
+        for i in 1..<keys.count {
+            let next_append = get_filter_string(parameters, value: keys[0])
+            if countElements(next_append) > 0 && countElements(filter_string) > 0{
+                filter_string += " AND "
+            }
+            filter_string += next_append
+            
+            
+        }
+        println(filter_string)
+        if countElements(filter_string) == 0 {
+            courses = Course.allWithOrder("title") as Array<Course>
+        }
+        else{
+            courses = Course.whereT(filter_string, order: "title") as Array<Course>
+        }
+        println(courses)
         /*
         TODO: Apply filter criteria to data model
         */
         
-        right_view.update_courses(courses)
+        //right_view.update_courses(courses)
+    }
+    
+    func get_filter_string(dict: Dictionary<String, String>, value: String) -> String{
+        var string = ""
+        if (dict[value]!.rangeOfString("All") != nil){
+            return ""
+        }
+        else{
+            let val = dict[value]!.stringByReplacingOccurrencesOfString(" ", withString: "")
+            return "\(value.lowercaseString) LIKE \(val)"
+        }
     }
     
     func add_course(course: AnyObject){
