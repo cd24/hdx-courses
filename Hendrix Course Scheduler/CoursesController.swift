@@ -45,9 +45,6 @@ class CoursesController: UIViewController {
         left_controller.view.frame = CGRectMake(5, 20, 320, screen_height - 25)
         right_controller.view.frame = CGRectMake(330, 20, screen_width - 335, screen_height - 25)
         
-        //left_controller.setViewControllers([left_view], animated: false)
-        //right_controller.setViewControllers([right_view], animated: false)
-        
         left_controller.view.layer.cornerRadius = 5
         left_controller.view.layer.masksToBounds = true
         
@@ -75,13 +72,11 @@ class CoursesController: UIViewController {
         let keys = parameters.keys.array
         var filter_string = get_filter_string(parameters, value: keys[0])
         for i in 1..<keys.count {
-            let next_append = get_filter_string(parameters, value: keys[0])
+            let next_append = get_filter_string(parameters, value: keys[i])
             if countElements(next_append) > 0 && countElements(filter_string) > 0{
                 filter_string += " AND "
             }
             filter_string += next_append
-            
-            
         }
         println(filter_string)
         if countElements(filter_string) == 0 {
@@ -105,7 +100,7 @@ class CoursesController: UIViewController {
         }
         else{
             let val = dict[value]!.stringByReplacingOccurrencesOfString(" ", withString: "")
-            return "\(value.lowercaseString) LIKE \(val)"
+            return "\(value.lowercaseString).name LIKE \(val)"
         }
     }
     
