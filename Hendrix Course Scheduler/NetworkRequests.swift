@@ -134,9 +134,10 @@ func loadCourses(){
                     }
                     course.save()
                 }
+                
             }
+            NSNotificationCenter.defaultCenter().postNotificationName("DataFinishedLoading", object: nil)
         }
-        //printData()
        
         }) { (op: AFHTTPRequestOperation!, error:NSError!) -> Void in
         print(error)

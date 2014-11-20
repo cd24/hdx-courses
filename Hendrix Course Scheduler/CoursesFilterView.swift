@@ -31,8 +31,8 @@ class CoursesFilterView: UITableViewController {
         self.title = "Filters"
         courses = []
         criteria = Dictionary<String, Array<String>>()
-        criteria["Instructor"] = ["All", "Dr. Gabriel Ferrer", "Dr. Carl Burch", "Dr. Mark Goadrich", "Dr. Mary Richardson", "Dr. Todd Berryman", "Mr. Bell"]
-        criteria["Department"] = ["All", "CSCI", "ENGL", "MATH", "PSCI"]
+        criteria["Instructor"] = ["All"]
+        criteria["Department"] = ["All"]
         criteria_keys = []
         for key in criteria.keys {
             criteria_keys.append(key)
@@ -46,8 +46,23 @@ class CoursesFilterView: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "dataFinishedLoading:", name: "DataFinishedLoading", object: nil)
     }
-
+    func dataFinishedLoading(notification : NSNotification){
+        var instructors = Instructor.allWithOrder("name ASC")
+        var tempArray : Array<String> = ["All"]
+        for ins in instructors{
+            tempArray.append((ins as Instructor).name)
+        }
+        criteria["Instructor"] = tempArray
+        
+        var departments = SubjectCode.allWithOrder("name ASC")
+        tempArray = ["All"]
+        for ins in departments{
+            tempArray.append((ins as SubjectCode).name)
+        }
+        criteria["Department"] = tempArray
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -148,7 +163,7 @@ class CoursesFilterView: UITableViewController {
             let value = cell.textLabel.text?.componentsSeparatedByString(":")[1]
             params[key!] = value!
         }
-        println(params)
+        
         return params
     }
     

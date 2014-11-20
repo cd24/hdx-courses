@@ -21,11 +21,21 @@ class CourseViewController: UITableViewController {
         self.title = "Courses"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Calendar", style: UIBarButtonItemStyle.Plain, target: self, action: "calendar")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Schedule", style: UIBarButtonItemStyle.Plain, target: self, action: "schedule:")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "dataLoaded:", name: "DataFinishedLoading", object: nil)
+        self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    func dataLoaded(notification : NSNotification){
+        var results = Course.allWithOrder("title ASC")
+        for course in results{
+            courses_display.append(course as Course)
+        }
+        self.tableView.reloadData()
+        
     }
     func schedule(sender : UIBarButtonItem!){
         var story = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())

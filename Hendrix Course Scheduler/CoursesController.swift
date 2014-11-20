@@ -85,12 +85,11 @@ class CoursesController: UIViewController {
         else{
             courses = Course.whereT(filter_string, order: "title") as Array<Course>
         }
-        println(courses)
         /*
         TODO: Apply filter criteria to data model
         */
         
-        //right_view.update_courses(courses)
+        right_view.update_courses(courses)
     }
     
     func get_filter_string(dict: Dictionary<String, String>, value: String) -> String{
@@ -98,9 +97,13 @@ class CoursesController: UIViewController {
         if (dict[value]!.rangeOfString("All") != nil){
             return ""
         }
+        else if value == "Department"{
+            let val = dict[value]!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            return "subjectCode.name LIKE '\(val)'"
+        }
         else{
-            let val = dict[value]!.stringByReplacingOccurrencesOfString(" ", withString: "")
-            return "\(value.lowercaseString).name LIKE \(val)"
+            let val = dict[value]!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+            return "\(value.lowercaseString).name LIKE '\(val)'"
         }
     }
     
