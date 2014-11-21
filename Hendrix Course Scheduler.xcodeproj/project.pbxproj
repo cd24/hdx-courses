@@ -32,6 +32,7 @@
 		528D811C1A09E9E7008DADF2 /* CoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D811B1A09E9E7008DADF2 /* CoursesController.swift */; };
 		528D81211A09E9E7008DADF2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528D81201A09E9E7008DADF2 /* Images.xcassets */; };
 		528D81301A09E9E7008DADF2 /* Hendrix_Course_SchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528D812F1A09E9E7008DADF2 /* Hendrix_Course_SchedulerTests.swift */; };
+		52DF017C1A1ED05A003165E4 /* CourseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52DF017B1A1ED05A003165E4 /* CourseCell.xib */; };
 		901422DB974EE1DC67E4FA2B /* libPods-Hendrix Course Scheduler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D5A8968212E83F9800E3243 /* libPods-Hendrix Course Scheduler.a */; };
 		B92DF70F1A12E13500C8CF57 /* SchedulePopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B92DF70E1A12E13500C8CF57 /* SchedulePopoverViewController.swift */; };
 		B95D7CEA1A0EF30D0088B988 /* CoursesData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B95D7CE81A0EF30D0088B988 /* CoursesData.xcdatamodeld */; };
@@ -96,6 +97,7 @@
 		528D81291A09E9E7008DADF2 /* Hendrix Course SchedulerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hendrix Course SchedulerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		528D812E1A09E9E7008DADF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		528D812F1A09E9E7008DADF2 /* Hendrix_Course_SchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hendrix_Course_SchedulerTests.swift; sourceTree = "<group>"; };
+		52DF017B1A1ED05A003165E4 /* CourseCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CourseCell.xib; sourceTree = "<group>"; };
 		60A31B80CCBEF1CABD12056F /* Pods-Hendrix Course Scheduler.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hendrix Course Scheduler.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hendrix Course Scheduler/Pods-Hendrix Course Scheduler.debug.xcconfig"; sourceTree = "<group>"; };
 		B7A57FB5FB44A40D6D273D2F /* Pods-Hendrix Course Scheduler.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hendrix Course Scheduler.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hendrix Course Scheduler/Pods-Hendrix Course Scheduler.release.xcconfig"; sourceTree = "<group>"; };
 		B92DF70E1A12E13500C8CF57 /* SchedulePopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulePopoverViewController.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				528D81161A09E9E7008DADF2 /* AppDelegate.swift */,
 				528D811D1A09E9E7008DADF2 /* Main.storyboard */,
 				528D81201A09E9E7008DADF2 /* Images.xcassets */,
+				52DF017B1A1ED05A003165E4 /* CourseCell.xib */,
 				528D81221A09E9E7008DADF2 /* LaunchScreen.xib */,
 				528D81181A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodeld */,
 				528D81141A09E9E7008DADF2 /* Supporting Files */,
@@ -387,6 +390,7 @@
 				528D81211A09E9E7008DADF2 /* Images.xcassets in Resources */,
 				524359301A0F089F00025FE0 /* logo.gif in Resources */,
 				525781F71A0ED6DD00FFC7E1 /* LaunchScreen.xib in Resources */,
+				52DF017C1A1ED05A003165E4 /* CourseCell.xib in Resources */,
 				525781F81A0ED6E900FFC7E1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

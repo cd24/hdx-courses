@@ -38,6 +38,7 @@ func loadCourses(){
     Course.deleteAll()
     SubjectCode.deleteAll()
     Instructor.deleteAll()
+    CoreDataManager.sharedManager().saveContext()
     var op = AFHTTPRequestOperationManager()
     op.requestSerializer = AFHTTPRequestSerializer() as AFHTTPRequestSerializer
     op.requestSerializer.setValue("application/atomsvc+xml;q=0.8, application/json;odata=fullmetadata;q=0.7, application/json;q=0.5, */*;q=0.1", forHTTPHeaderField: "Accept")

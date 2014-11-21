@@ -22,7 +22,8 @@ class CourseViewController: UITableViewController {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Calendar", style: UIBarButtonItemStyle.Plain, target: self, action: "calendar")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Schedule", style: UIBarButtonItemStyle.Plain, target: self, action: "schedule:")
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "dataLoaded:", name: "DataFinishedLoading", object: nil)
-        self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
+        self.tableView.registerNib(UINib(nibName: "CourseCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        self.tableView.rowHeight = 62.0
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -67,17 +68,24 @@ class CourseViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as CourseCell
 
         // Configure the cell...
-        cell.textLabel.text = courses_display[indexPath.row].title
-
+        var course = courses_display[indexPath.row]
+        cell.courseTitle.text = course.title
+        cell.department.text = course.subjectCode.name
+        cell.instructor.text = course.instructor.name
+        
         return cell
     }
     
     func update_courses(courses: Array<Course>){
         self.courses_display = courses
         self.tableView.reloadData()
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
 
     /*
@@ -125,4 +133,17 @@ class CourseViewController: UITableViewController {
     }
     */
 
+}
+class CourseCell : UITableViewCell {
+    @IBOutlet var courseTitle : UILabel!
+    @IBOutlet var department : UILabel!
+    @IBOutlet var instructor : UILabel!
+    @IBOutlet var days : UILabel!
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
 }
