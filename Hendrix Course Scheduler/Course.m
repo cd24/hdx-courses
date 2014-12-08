@@ -2,7 +2,7 @@
 //  Course.m
 //  Hendrix Course Scheduler
 //
-//  Created by Connor Bell on 11/11/14.
+//  Created by Connor Bell on 12/7/14.
 //  Copyright (c) 2014 Survey Dream. All rights reserved.
 //
 
@@ -15,18 +15,19 @@
 @implementation Course
 
 @dynamic building;
-@dynamic title;
-@dynamic days;
-@dynamic courseCode;
-@dynamic startTime;
-@dynamic endTime;
-@dynamic catalogDescription;
-@dynamic year;
-@dynamic term;
-@dynamic currentEnrollment;
 @dynamic capacity;
-@dynamic subjectCode;
+@dynamic catalogDescription;
+@dynamic courseCode;
+@dynamic currentEnrollment;
+@dynamic days;
+@dynamic endTime;
+@dynamic startTime;
+@dynamic term;
+@dynamic title;
+@dynamic year;
+@dynamic period;
 @dynamic instructor;
 @dynamic schedules;
+@dynamic subjectCode;
 
 @end
