@@ -94,6 +94,7 @@ class CourseViewController: UITableViewController {
         }
         else {
             cell.courseTitle.text = "You shouldn't be seeing this"
+            cell.backgroundColor = UIColor.redColor()
             println("Caught a nil... Probably should look at it.\n")
         }
         return cell
