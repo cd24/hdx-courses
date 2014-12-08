@@ -66,10 +66,10 @@ class OptionSelectorView: UITableViewController, UISearchBarDelegate, UISearchDi
         
         
         if false{//tableView == self.searchDisplayController!.searchResultsTableView {
-            cell.textLabel.text = filter_options[indexPath.row]
+            cell.textLabel!.text = filter_options[indexPath.row]
         }
         else {
-            cell.textLabel.text = options[indexPath.row]
+            cell.textLabel!.text = options[indexPath.row]
         }
         
         return cell
@@ -79,7 +79,7 @@ class OptionSelectorView: UITableViewController, UISearchBarDelegate, UISearchDi
         selected = options[indexPath.row]
         self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
         let cell = self.tableView!.cellForRowAtIndexPath(indexPath)
-        let label = cell?.textLabel.text
+        let label = cell?.textLabel!.text
         parent.set_new_value(label!)
     }
     

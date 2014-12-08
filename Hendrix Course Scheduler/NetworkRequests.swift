@@ -35,6 +35,7 @@ func printData(){
 }
 
 func loadCourses(){
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     Course.deleteAll()
     SubjectCode.deleteAll()
     Instructor.deleteAll()
@@ -137,6 +138,7 @@ func loadCourses(){
                 }
                 
             }
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
             NSNotificationCenter.defaultCenter().postNotificationName("DataFinishedLoading", object: nil)
         }
        

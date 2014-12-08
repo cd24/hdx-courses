@@ -94,7 +94,7 @@ class CoursesFilterView: UITableViewController {
             var title = criteria_keys[indexPath.row]
             var options = criteria[title]!
             var value = options[0]
-            cell.textLabel.text = "\(title): \(value)"
+            cell.textLabel!.text = "\(title): \(value)"
         }
         if indexPath.section == 1 {
             var title = ""
@@ -104,7 +104,7 @@ class CoursesFilterView: UITableViewController {
             else{
                 title = "No Course"
             }
-            cell.textLabel.text = title
+            cell.textLabel!.text = title
         }
 
         return cell
@@ -147,8 +147,8 @@ class CoursesFilterView: UITableViewController {
     
     func set_new_value(label: String){
         let cell = self.tableView.cellForRowAtIndexPath(self.tableView.indexPathForSelectedRow()!)!
-        let key_str = cell.textLabel.text?.componentsSeparatedByString(":")[0]
-        cell.textLabel.text = key_str! + ": " + label
+        let key_str = cell.textLabel!.text?.componentsSeparatedByString(":")[0]
+        cell.textLabel!.text = key_str! + ": " + label
         self.tableView.deselectRowAtIndexPath(self.tableView.indexPathForSelectedRow()!, animated: true)
         self.navigationController?.popToRootViewControllerAnimated(true)
         parent.update_with_filter(get_filter_parameters())
@@ -159,8 +159,8 @@ class CoursesFilterView: UITableViewController {
         for i in 0..<self.tableView.numberOfRowsInSection(0){
             let idxPath = NSIndexPath(forRow: i, inSection: 0)
             let cell = self.tableView.cellForRowAtIndexPath(idxPath)!
-            let key = cell.textLabel.text?.componentsSeparatedByString(":")[0]
-            let value = cell.textLabel.text?.componentsSeparatedByString(":")[1]
+            let key = cell.textLabel!.text?.componentsSeparatedByString(":")[0]
+            let value = cell.textLabel!.text?.componentsSeparatedByString(":")[1]
             params[key!] = value!
         }
         

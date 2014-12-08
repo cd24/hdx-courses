@@ -36,7 +36,7 @@ class SchedulePopoverViewController : UITableViewController{
     }
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        cell.textLabel.text = sched[indexPath.row].name
+        cell.textLabel!.text = sched[indexPath.row].name
         if indexPath.row == selectedIdx{
             cell.accessoryType = UITableViewCellAccessoryType.Checkmark
         }

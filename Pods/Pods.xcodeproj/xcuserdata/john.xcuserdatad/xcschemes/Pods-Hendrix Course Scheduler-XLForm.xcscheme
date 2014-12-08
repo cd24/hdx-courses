@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5F0A539BD83FE75CEC8C32B4"
+               BlueprintIdentifier = "C81D6DA0B083649B5E461AA4"
                BuildableName = "libPods-Hendrix Course Scheduler-XLForm.a"
                BlueprintName = "Pods-Hendrix Course Scheduler-XLForm"
                ReferencedContainer = "container:Pods.xcodeproj">
