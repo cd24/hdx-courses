@@ -10,17 +10,47 @@ import UIKit
 
 class CourseViewController: UITableViewController {
     
+    var parent: CoursesController!
+    var courses_display: Array<Course>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        courses_display = []
         
         self.title = "Courses"
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Calendar", style: UIBarButtonItemStyle.Plain, target: self, action: "calendar")
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Schedule", style: UIBarButtonItemStyle.Plain, target: self, action: "schedule:")
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "dataLoaded:", name: "DataFinishedLoading", object: nil)
+        self.tableView.registerNib(UINib(nibName: "CourseCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        self.tableView.rowHeight = 62.0
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func refresh_course() {
+        loadCourses()
+    }
+    
+    func dataLoaded(notification : NSNotification){
+        if (self.refreshControl == nil){
+            self.refreshControl = UIRefreshControl()
+            self.refreshControl!.backgroundColor = UIColor.orangeColor()
+            self.refreshControl!.tintColor = UIColor.whiteColor()
+            self.refreshControl!.addTarget(self, action: "refresh_course", forControlEvents: UIControlEvents.ValueChanged)
+        }
+        courses_display = []
+        var results = Course.allWithOrder("title ASC")
+        for course in results{
+            courses_display.append(course as Course)
+        }
+        self.refreshControl!.endRefreshing()
+        self.tableView.reloadData()
+        
     }
     func schedule(sender : UIBarButtonItem!){
         var story = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
@@ -41,24 +71,42 @@ class CourseViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return courses_display.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as CourseCell
 
         // Configure the cell...
-
+        var course = courses_display[indexPath.row]
+        
+        if (course.title != nil && course.subjectCode.name != nil && course.instructor.name != nil) {
+            cell.courseTitle.text = course.title
+            cell.department.text = course.subjectCode.name
+            cell.instructor.text = course.instructor.name
+        }
+        else {
+            cell.courseTitle.text = "You shouldn't be seeing this"
+            println("Caught a nil... Probably should look at it.\n")
+        }
         return cell
     }
-    */
+    
+    func update_courses(courses: Array<Course>){
+        self.courses_display = courses
+        self.tableView.reloadData()
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -105,4 +153,17 @@ class CourseViewController: UITableViewController {
     }
     */
 
+}
+class CourseCell : UITableViewCell {
+    @IBOutlet var courseTitle : UILabel!
+    @IBOutlet var department : UILabel!
+    @IBOutlet var instructor : UILabel!
+    @IBOutlet var days : UILabel!
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+    }
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
 }

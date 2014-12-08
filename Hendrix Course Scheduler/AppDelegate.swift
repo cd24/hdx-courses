@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        //loadCourses()//Uncomment this line to load the data
+        loadCourses()//Uncomment this line to load the data
         
         //printData() //Uncomment this line to print the current data
         

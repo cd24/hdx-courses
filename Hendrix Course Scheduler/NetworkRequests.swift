@@ -35,9 +35,11 @@ func printData(){
 }
 
 func loadCourses(){
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     Course.deleteAll()
     SubjectCode.deleteAll()
     Instructor.deleteAll()
+    CoreDataManager.sharedManager().saveContext()
     var op = AFHTTPRequestOperationManager()
     op.requestSerializer = AFHTTPRequestSerializer() as AFHTTPRequestSerializer
     op.requestSerializer.setValue("application/atomsvc+xml;q=0.8, application/json;odata=fullmetadata;q=0.7, application/json;q=0.5, */*;q=0.1", forHTTPHeaderField: "Accept")
@@ -134,9 +136,11 @@ func loadCourses(){
                     }
                     course.save()
                 }
+                
             }
+            UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+            NSNotificationCenter.defaultCenter().postNotificationName("DataFinishedLoading", object: nil)
         }
-        //printData()
        
         }) { (op: AFHTTPRequestOperation!, error:NSError!) -> Void in
         print(error)

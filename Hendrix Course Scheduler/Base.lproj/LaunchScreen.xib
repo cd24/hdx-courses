@@ -11,15 +11,28 @@
             <rect key="frame" x="0.0" y="0.0" width="481" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="logo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="r16-Ws-m1L">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.gif" translatesAutoresizingMaskIntoConstraints="NO" id="r16-Ws-m1L">
                     <rect key="frame" x="120" y="123" width="240" height="233"/>
                     <constraints>
+                        <constraint firstAttribute="height" constant="233" id="BkU-0d-ej4"/>
+                        <constraint firstAttribute="width" constant="240" id="Mkn-Dr-Yvi"/>
+                        <constraint firstAttribute="width" constant="240" id="c5o-Xu-QeC"/>
+                        <constraint firstAttribute="height" constant="233" id="fgx-F9-GSh"/>
                         <constraint firstAttribute="width" secondItem="r16-Ws-m1L" secondAttribute="height" multiplier="240:233" id="iBo-nF-pwX"/>
                         <constraint firstAttribute="height" constant="233" id="jmF-MJ-tbf"/>
                         <constraint firstAttribute="width" constant="240" id="t8R-S2-CF2"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="BkU-0d-ej4"/>
+                            <exclude reference="Mkn-Dr-Yvi"/>
+                            <exclude reference="iBo-nF-pwX"/>
+                            <exclude reference="jmF-MJ-tbf"/>
+                            <exclude reference="t8R-S2-CF2"/>
+                        </mask>
+                    </variation>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Course Manager" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDE-zi-ALh">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Course Manager" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fDE-zi-ALh">
                     <rect key="frame" x="132" y="314" width="217" height="42"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="217" id="MAJ-LP-hUX"/>
@@ -32,8 +45,26 @@
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="r16-Ws-m1L" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="120" id="ALA-au-BHO"/>
+                <constraint firstItem="r16-Ws-m1L" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="123" id="EAp-1h-ESs"/>
+                <constraint firstAttribute="trailing" secondItem="r16-Ws-m1L" secondAttribute="trailing" constant="121" id="HIG-tw-gBw"/>
+                <constraint firstAttribute="bottom" secondItem="r16-Ws-m1L" secondAttribute="bottom" constant="124" id="Q28-KU-ca3"/>
+                <constraint firstItem="r16-Ws-m1L" firstAttribute="bottom" secondItem="fDE-zi-ALh" secondAttribute="bottom" id="RjL-jx-Acf"/>
+                <constraint firstAttribute="centerX" secondItem="r16-Ws-m1L" secondAttribute="centerX" id="k5C-MW-mA7"/>
+                <constraint firstAttribute="centerX" secondItem="fDE-zi-ALh" secondAttribute="centerX" id="oBZ-qA-5Jr"/>
+                <constraint firstAttribute="centerY" secondItem="r16-Ws-m1L" secondAttribute="centerY" id="rIG-a3-gjs"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="ALA-au-BHO"/>
+                    <exclude reference="EAp-1h-ESs"/>
+                    <exclude reference="HIG-tw-gBw"/>
+                    <exclude reference="Q28-KU-ca3"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="548.5" y="455"/>
         </view>
     </objects>
