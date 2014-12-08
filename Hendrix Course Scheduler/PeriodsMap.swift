@@ -245,7 +245,18 @@ class ClassPeriods {
         "D3":D3,
         "D4":D4,
         "D5":D5,
-        "D6":D6
+        "D6":D6,
+        "C1":C1,
+        "C2":C2,
+        "C3":C3,
+        "C4":C4,
+        "C5":C5,
+        "C6":C6,
+        "C7":C7,
+        "C8":C8,
+        "S1":S1,
+        "S2":S2,
+        "S3":S3
     ]
     
     var DisplayStrings : Dictionary<String,String!> = [
