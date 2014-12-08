@@ -106,6 +106,10 @@ class CourseViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        var (pop, course) = CourseDetailsControllerPopover()
+        course.course = courses_display[indexPath.row]
+        pop.presentPopoverFromRect(CGRectZero, inView: tableView.cellForRowAtIndexPath(indexPath)!, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
+        
     }
 
     /*

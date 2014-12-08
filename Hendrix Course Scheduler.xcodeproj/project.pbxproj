@@ -40,8 +40,10 @@
 		B98F68041A12CA0F00F22D23 /* Instructor.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F68031A12CA0F00F22D23 /* Instructor.m */; };
 		B98F68071A12CA1000F22D23 /* Schedule.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F68061A12CA1000F22D23 /* Schedule.m */; };
 		B98F680A1A12CA1000F22D23 /* SubjectCode.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F68091A12CA1000F22D23 /* SubjectCode.m */; };
-		B98F680D1A12CA1000F22D23 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = B98F680C1A12CA1000F22D23 /* Course.m */; };
 		B98F680F1A12CD5200F22D23 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98F680E1A12CD5200F22D23 /* CalendarViewController.swift */; };
+		B9DD186E1A354303002DEEC5 /* CourseDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DD186D1A354303002DEEC5 /* CourseDetailsController.swift */; };
+		B9DD18701A3550BC002DEEC5 /* PeriodsMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DD186F1A3550BC002DEEC5 /* PeriodsMap.swift */; };
+		B9DD18731A3556ED002DEEC5 /* Course.m in Sources */ = {isa = PBXBuildFile; fileRef = B9DD18721A3556ED002DEEC5 /* Course.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,9 +111,11 @@
 		B98F68061A12CA1000F22D23 /* Schedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Schedule.m; sourceTree = "<group>"; };
 		B98F68081A12CA1000F22D23 /* SubjectCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubjectCode.h; sourceTree = "<group>"; };
 		B98F68091A12CA1000F22D23 /* SubjectCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubjectCode.m; sourceTree = "<group>"; };
-		B98F680B1A12CA1000F22D23 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
-		B98F680C1A12CA1000F22D23 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 		B98F680E1A12CD5200F22D23 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		B9DD186D1A354303002DEEC5 /* CourseDetailsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseDetailsController.swift; sourceTree = "<group>"; };
+		B9DD186F1A3550BC002DEEC5 /* PeriodsMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeriodsMap.swift; sourceTree = "<group>"; };
+		B9DD18711A3556ED002DEEC5 /* Course.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Course.h; sourceTree = "<group>"; };
+		B9DD18721A3556ED002DEEC5 /* Course.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Course.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 		527ACA221A0ED4010052037E /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				B9DD186F1A3550BC002DEEC5 /* PeriodsMap.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				525782001A0EDB6100FFC7E1 /* CourseViewController.swift */,
 				B98F680E1A12CD5200F22D23 /* CalendarViewController.swift */,
 				B92DF70E1A12E13500C8CF57 /* SchedulePopoverViewController.swift */,
+				B9DD186D1A354303002DEEC5 /* CourseDetailsController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -183,8 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				B95D7CE81A0EF30D0088B988 /* CoursesData.xcdatamodeld */,
-				B98F680B1A12CA1000F22D23 /* Course.h */,
-				B98F680C1A12CA1000F22D23 /* Course.m */,
+				B9DD18711A3556ED002DEEC5 /* Course.h */,
+				B9DD18721A3556ED002DEEC5 /* Course.m */,
 				B98F68081A12CA1000F22D23 /* SubjectCode.h */,
 				B98F68091A12CA1000F22D23 /* SubjectCode.m */,
 				B98F68051A12CA1000F22D23 /* Schedule.h */,
@@ -446,22 +452,24 @@
 				527ACA381A0ED4B30052037E /* NSNumber+ObjectiveSugar.m in Sources */,
 				B95D7CEA1A0EF30D0088B988 /* CoursesData.xcdatamodeld in Sources */,
 				527ACA421A0ED4C30052037E /* CoreDataManager.m in Sources */,
-				B98F680D1A12CA1000F22D23 /* Course.m in Sources */,
 				B92DF70F1A12E13500C8CF57 /* SchedulePopoverViewController.swift in Sources */,
 				528D81171A09E9E7008DADF2 /* AppDelegate.swift in Sources */,
 				528D811A1A09E9E7008DADF2 /* Hendrix_Course_Scheduler.xcdatamodeld in Sources */,
 				52568D3E1A12F3E300ADF2DA /* OptionSelectorView.swift in Sources */,
 				B95D7CEF1A0EF5290088B988 /* NetworkRequests.swift in Sources */,
 				527ACA361A0ED4B30052037E /* NSDictionary+ObjectiveSugar.m in Sources */,
+				B9DD186E1A354303002DEEC5 /* CourseDetailsController.swift in Sources */,
 				527ACA3A1A0ED4B30052037E /* NSString+ObjectiveSugar.m in Sources */,
 				527ACA371A0ED4B30052037E /* NSMutableArray+ObjectiveSugar.m in Sources */,
 				527ACA441A0ED4C30052037E /* NSManagedObject+Mappings.m in Sources */,
+				B9DD18731A3556ED002DEEC5 /* Course.m in Sources */,
 				B98F680F1A12CD5200F22D23 /* CalendarViewController.swift in Sources */,
 				525781FF1A0EDA5F00FFC7E1 /* CoursesFilterView.swift in Sources */,
 				B98F68071A12CA1000F22D23 /* Schedule.m in Sources */,
 				527ACA391A0ED4B30052037E /* NSSet+ObjectiveSugar.m in Sources */,
 				527ACA431A0ED4C30052037E /* NSManagedObject+ActiveRecord.m in Sources */,
 				B98F680A1A12CA1000F22D23 /* SubjectCode.m in Sources */,
+				B9DD18701A3550BC002DEEC5 /* PeriodsMap.swift in Sources */,
 				B98F68041A12CA0F00F22D23 /* Instructor.m in Sources */,
 				527ACA351A0ED4B30052037E /* NSArray+ObjectiveSugar.m in Sources */,
 				525782011A0EDB6100FFC7E1 /* CourseViewController.swift in Sources */,

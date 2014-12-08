@@ -64,6 +64,9 @@ func loadCourses(){
                     if let courseCode = c["CourseCode"] as? NSString{
                         course.courseCode = courseCode
                     }
+                    if let coursePeriod = c["Period"] as? NSString{
+                        course.period = coursePeriod
+                    }
                     if let currentEnrollement = c["CurrentEnrollment"] as? NSNumber{
                         course.currentEnrollment = currentEnrollement
                     }
