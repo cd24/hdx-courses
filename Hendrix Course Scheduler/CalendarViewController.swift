@@ -108,9 +108,11 @@ class DayView: UIView{
             self.addSubview(bar)
         }
     }
+    
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     func addEvent(startTime: Int,halfStart : Bool, endTime: Int, halfEnd: Bool, title: String){
         var startY : CGFloat//= wholeHours[startTime].frame.origin.y
         var endY : CGFloat //= wholeHours[endTime].frame.origin.y
@@ -132,6 +134,7 @@ class DayView: UIView{
         self.addSubview(calEve)
     }
 }
+
 class CalendarEvent : UIView{
     var label : UILabel!
     override init(frame: CGRect) {

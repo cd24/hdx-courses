@@ -44,10 +44,7 @@ class CoursesFilterView: UITableViewController {
         
         self.tableView.registerClass(UITableViewCell.classForCoder(), forCellReuseIdentifier: "Cell")
         self.view.layer.borderColor = UIColor.blackColor().CGColor
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.1
+        
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "dataFinishedLoading:", name: "DataFinishedLoading", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "update_schedule", name: "RefreshSchedule", object: nil)
@@ -90,13 +87,11 @@ class CoursesFilterView: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // Return the number of sections.
         return 2
     }
 
@@ -109,7 +104,6 @@ class CoursesFilterView: UITableViewController {
         }
         return 0
     }
-
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
@@ -148,25 +142,18 @@ class CoursesFilterView: UITableViewController {
         return ["Filter Criteria", "Selected Courses", ""][section]
     }
     
-    // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Allow editing of the courses, but not the filters.  Section 1.
         return indexPath.section == 1 && indexPath.row < courses!.count
     }
     
-
-    
-    // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
             var crs = courses[indexPath.row]
             courses!.removeAtIndex(indexPath.row)
             current_schedule.removeCoursesObject(crs)
             current_schedule.save()
             self.tableView.reloadData()
         } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
     
@@ -213,30 +200,4 @@ class CoursesFilterView: UITableViewController {
     func toShowFullCourses() -> Bool {
         return showFullCourses
     }
-    
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

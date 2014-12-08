@@ -7,36 +7,47 @@
 //
 
 import Foundation
+
 let ClassPeriodsShared = ClassPeriods()
+
 func A(calView : CalendarViewController, startTime: Int, endTime : Int, title : String){
     for i in 0..<3{
         calView.daysViews[i * 2].addEvent(startTime, halfStart: false, endTime: endTime, halfEnd: false, title: title)
     }
 }
+
 func A1(calView : CalendarViewController,title : String){
     A(calView, 8, 9,title)
 }
+
 func A2(calView : CalendarViewController,title : String){
     A(calView, 9, 10,title)
 }
+
 func A3(calView : CalendarViewController,title : String){
     A(calView, 10, 11,title)
 }
+
 func A4(calView : CalendarViewController,title : String){
     A(calView, 11, 12,title)
 }
+
 func A5(calView : CalendarViewController,title : String){
     A(calView, 12, 13,title)
 }
+
 func A6(calView : CalendarViewController,title : String){
     A(calView, 13, 14,title)
 }
+
 func A7(calView : CalendarViewController,title : String){
     A(calView, 14, 15,title)
 }
+
 func A8(calView : CalendarViewController,title : String){
     A(calView, 15, 16,title)
 }
+
 func B(calView : CalendarViewController, startTime: Int, endTime : Int, halfStart : Bool, title : String){
     for i in 0..<2{
         calView.daysViews[(i * 2) + 1].addEvent(startTime, halfStart: halfStart, endTime: endTime, halfEnd: !halfStart, title: title)
@@ -46,62 +57,163 @@ func B(calView : CalendarViewController, startTime: Int, endTime : Int, halfStar
 func B1(calView : CalendarViewController, title : String){
     B(calView,8,9,false,title)
 }
+
 func B2(calView : CalendarViewController,title : String){
     B(calView, 9, 11,true,title)
 }
+
 func B3(calView : CalendarViewController,title : String){
     B(calView, 13, 14,false,title)
 }
+
 func B4(calView : CalendarViewController,title : String){
     B(calView, 14, 16,true,title)
 }
+
 func B5(calView : CalendarViewController,title : String){
     calView.daysViews[1].addEvent(8, halfStart: false, endTime: 11, halfEnd: false, title: title)
     calView.daysViews[3].addEvent(9, halfStart: true, endTime: 11, halfEnd: false, title: title)
 }
+
 func LMS(calView : CalendarViewController, day : Int, title : String){
     
     calView.daysViews[day].addEvent(8, halfStart: false, endTime: 10, halfEnd: false, title: title)
     
 }
+
 func LM(calView : CalendarViewController, day : Int, title : String){
     
     calView.daysViews[day].addEvent(8, halfStart: false, endTime: 11, halfEnd: false, title: title)
     
 }
+
 func LA(calView : CalendarViewController, day :Int, title : String){
     calView.daysViews[day].addEvent(13, halfStart: false, endTime: 16, halfEnd: false, title: title)
 }
+
 func L1(calView : CalendarViewController, title : String){
     LMS(calView,0,title)
 }
+
 func L2(calView : CalendarViewController,title : String){
     LM(calView,1,title)
 }
+
 func L3(calView : CalendarViewController,title : String){
     LMS(calView,2,title)
 }
+
 func L4(calView : CalendarViewController,title : String){
     LM(calView,3,title)
 }
+
 func L5(calView : CalendarViewController,title : String){
     LMS(calView,4,title)
 }
+
 func L6(calView : CalendarViewController, title : String){
     LA(calView,0,title)
 }
+
 func L7(calView : CalendarViewController,title : String){
     LA(calView,1,title)
 }
+
 func L8(calView : CalendarViewController,title : String){
     LA(calView,2,title)
 }
+
 func L9(calView : CalendarViewController,title : String){
     LA(calView,3,title)
 }
+
 func L10(calView : CalendarViewController,title : String){
     LA(calView,4,title)
 }
+
+
+func D(calView : CalendarViewController, startTime: Int, endTime : Int, halfStart : Bool, title : String){
+    for i in 0..<2{
+        calView.daysViews[(i * 2) + 1].addEvent(startTime, halfStart: halfStart, endTime: endTime, halfEnd: halfStart, title: title)
+    }
+}
+
+func S1(calView : CalendarViewController, title : String) {
+    S(calView, 0, title)
+}
+
+func S2(calView : CalendarViewController, title : String) {
+    S(calView, 2, title)
+}
+
+func S3(calView : CalendarViewController, title : String) {
+    S(calView, 4, title)
+}
+
+func S(calView : CalendarViewController, day: Int, title: String) {
+    calView.daysViews[day].addEvent(14, halfStart: false, endTime: 1600, halfEnd: false, title: title)
+}
+
+func C1(calView: CalendarViewController, title : String) {
+    A1(calView, title)
+    calView.daysViews[3].addEvent(8, halfStart: false, endTime: 9, halfEnd: false, title: title)
+}
+
+func C2(calView: CalendarViewController, title : String) {
+    A2(calView, title)
+    calView.daysViews[1].addEvent(8, halfStart: false, endTime: 9, halfEnd: false, title: title)
+}
+
+func C3(calView: CalendarViewController, title : String) {
+    A3(calView, title)
+    calView.daysViews[3].addEvent(12, halfStart: false, endTime: 1, halfEnd: false, title: title)
+}
+
+func C4(calView: CalendarViewController, title: String) {
+    A4(calView, title)
+    calView.daysViews[1].addEvent(11, halfStart: false, endTime: 12, halfEnd: false, title: title)
+}
+func C5(calView: CalendarViewController, title: String) {
+    A5(calView, title)
+    calView.daysViews[1].addEvent(12, halfStart: false, endTime: 1, halfEnd: false, title: title)
+}
+
+func C6(calView: CalendarViewController, title: String) {
+    A6(calView, title)
+    calView.daysViews[1].addEvent(12, halfStart: false, endTime: 1, halfEnd: false, title: title)
+}
+
+func C7(calView: CalendarViewController, title: String) {
+    A7(calView, title)
+    calView.daysViews[1].addEvent(2, halfStart: true, endTime: 3, halfEnd: true, title: title)
+}
+
+func C8(calView: CalendarViewController, title: String) {
+    A8(calView, title)
+    calView.daysViews[3].addEvent(3, halfStart: false, endTime: 4, halfEnd: false, title: title)
+}
+
+
+func D1(calView : CalendarViewController,title : String){
+    A(calView, 8, 10, title)
+}
+func D2(calView : CalendarViewController,title : String){
+    A(calView, 10, 12, title)
+}
+func D3(calView : CalendarViewController,title : String){
+    A(calView, 12, 14,title)
+}
+func D4(calView : CalendarViewController,title : String){
+    A(calView, 14, 16,title)
+}
+func D5(calView : CalendarViewController,title : String){
+    D(calView,9,11,false,title)
+}
+func D6(calView : CalendarViewController,title : String){
+    D(calView,12,14,true,title)
+}
+
+
 class ClassPeriods {
     
     var FunctionMappings : Dictionary<String,((calView : CalendarViewController, title : String) -> ())!> = [
@@ -128,7 +240,23 @@ class ClassPeriods {
         "L8":L8,
         "L9":L9,
         "L10":L10,
-        
+        "D1":D1,
+        "D2":D2,
+        "D3":D3,
+        "D4":D4,
+        "D5":D5,
+        "D6":D6,
+        "C1":C1,
+        "C2":C2,
+        "C3":C3,
+        "C4":C4,
+        "C5":C5,
+        "C6":C6,
+        "C7":C7,
+        "C8":C8,
+        "S1":S1,
+        "S2":S2,
+        "S3":S3
     ]
     
     var DisplayStrings : Dictionary<String,String!> = [
