@@ -97,18 +97,15 @@ class CoursesFilterView: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // Return the number of sections.
-        return 3
+        return 2
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return criteria_keys.count
+            return criteria_keys.count+1
         }
         else if section == 1 {
             return courses.count > 0 ? courses.count : 1
-        }
-        else if section == 2 {
-            return 1
         }
         return 0
     }
@@ -118,12 +115,20 @@ class CoursesFilterView: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
 
         if indexPath.section == 0 {
+            if indexPath.row == 2 {
+                cell.textLabel!.text = "Show Full Courses"
+                var enabledSwitch = UISwitch(frame: CGRectMake(0, 0, 75, 30)) as UISwitch
+                enabledSwitch.on = true
+                cell.accessoryView = enabledSwitch
+                enabledSwitch.addTarget(self, action: "switchValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+            } else {
+
             var title = criteria_keys[indexPath.row]
             var options = criteria[title]!
             var value = options[0]
             cell.textLabel!.text = "\(title): \(value)"
+            }
         }
-        
         else if indexPath.section == 1 {
             var title = ""
             if indexPath.row < courses!.count {
@@ -134,15 +139,6 @@ class CoursesFilterView: UITableViewController {
             }
             cell.textLabel!.text = title
             cell.accessoryView = nil
-        }
-        
-        else if indexPath.section == 2 {
-            
-            cell.textLabel!.text = "Show Full Courses"
-            var enabledSwitch = UISwitch(frame: CGRectMake(0, 0, 75, 30)) as UISwitch
-            enabledSwitch.on = true
-            cell.accessoryView = enabledSwitch
-            enabledSwitch.addTarget(self, action: "switchValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
         }
 
         return cell
@@ -175,7 +171,7 @@ class CoursesFilterView: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if indexPath.section == 0 {
+        if indexPath.section == 0 && indexPath.row < 2 {
             let option_selector = OptionSelectorView()
             let options = criteria[criteria_keys[indexPath.row]]!
             option_selector.setOptions(self, options: options)
@@ -197,7 +193,7 @@ class CoursesFilterView: UITableViewController {
     
     func get_filter_parameters() -> Dictionary<String, String>{
         var params = Dictionary<String, String>()
-        for i in 0..<self.tableView.numberOfRowsInSection(0){
+        for i in 0..<2{
             let idxPath = NSIndexPath(forRow: i, inSection: 0)
             let cell = self.tableView.cellForRowAtIndexPath(idxPath)!
             let key = cell.textLabel!.text?.componentsSeparatedByString(":")[0]

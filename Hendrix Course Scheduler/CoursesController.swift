@@ -80,7 +80,7 @@ class CoursesController: UIViewController {
         var filter_string = get_filter_string(parameters, value: keys[0])
         for i in 1..<keys.count {
             let next_append = get_filter_string(parameters, value: keys[i])
-            if countElements(next_append) > 0 && countElements(filter_string) > 0{
+            if countElements(next_append) > 0 && countElements(filter_string) > 0 {
                 filter_string += " AND "
             }
             filter_string += next_append
@@ -89,7 +89,6 @@ class CoursesController: UIViewController {
             if filter_string != "" {filter_string += " AND "}
             filter_string += "capacity > currentEnrollment"
         }
-        //
         println(filter_string)
         if countElements(filter_string) == 0 {
             courses = Course.allWithOrder("title") as Array<Course>
