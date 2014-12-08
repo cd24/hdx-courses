@@ -110,6 +110,39 @@ func D(calView : CalendarViewController, startTime: Int, endTime : Int, halfStar
     }
 }
 
+func S2(calView : CalendarViewController, title : String) {
+    S(calView, 2, title)
+}
+
+func S3(calView : CalendarViewController, title : String) {
+    S(calView, 4, title)
+}
+
+func S(calView : CalendarViewController, day: Int, title: String) {
+    calView.daysViews[day].addEvent(14, halfStart: false, endTime: 1600, halfEnd: false, title: title)
+}
+
+func C1(calView: CalendarViewController, title : String) {
+    A1(calView, title)
+    calView.daysViews[3].addEvent(8, halfStart: false, endTime: 9, halfEnd: false, title: title)
+}
+
+func C2(calView: CalendarViewController, title : String) {
+    A2(calView, title)
+    calView.daysViews[1].addEvent(8, halfStart: false, endTime: 9, halfEnd: false, title: title)
+}
+
+func C3(calView: CalendarViewController, title : String) {
+    A3(calView, title)
+    calView.daysViews[3].addEvent(12, halfStart: false, endTime: 1, halfEnd: false, title: title)
+}
+
+func C4(calView: CalendarViewController, title: String) {
+    A4(calView, title)
+    calView.daysViews[1].addEvent(11, halfStart: false, endTime: 12, halfEnd: false, title: title)
+}
+
+
 func D1(calView : CalendarViewController,title : String){
     A(calView, 8, 10, title)
 }
