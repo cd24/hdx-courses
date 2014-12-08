@@ -39,8 +39,8 @@ class CourseViewController: UITableViewController {
     func dataLoaded(notification : NSNotification){
         if (self.refreshControl == nil){
             self.refreshControl = UIRefreshControl()
-            self.refreshControl!.backgroundColor = UIColor.orangeColor()
-            self.refreshControl!.tintColor = UIColor.whiteColor()
+            self.refreshControl!.backgroundColor = UIColor.whiteColor()
+            self.refreshControl!.tintColor = UIColor.orangeColor()
             self.refreshControl!.addTarget(self, action: "refresh_course", forControlEvents: UIControlEvents.ValueChanged)
         }
         courses_display = []
@@ -50,6 +50,7 @@ class CourseViewController: UITableViewController {
         }
         self.refreshControl!.endRefreshing()
         self.tableView.reloadData()
+        parent.update_from_last()
         
     }
     func schedule(sender : UIBarButtonItem!){

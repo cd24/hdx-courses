@@ -13,21 +13,22 @@ class CoursesController: UIViewController {
     var left_view : CoursesFilterView!
     var right_view : CourseViewController!
     var courses : Array<AnyObject>
-   
+    var recent_filter: Dictionary<String, String>!
+    
     override init() {
         left_view = CoursesFilterView(style: UITableViewStyle.Grouped)
         right_view = CourseViewController(style: UITableViewStyle.Grouped)
         courses = Array<AnyObject>()
         super.init()
     }
-
+    
     required init(coder aDecoder: NSCoder) {
         left_view = CoursesFilterView(style:UITableViewStyle.Grouped)
         right_view = CourseViewController(style: UITableViewStyle.Plain)
         courses = Array<AnyObject>()
         super.init(coder: aDecoder)
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -73,6 +74,7 @@ class CoursesController: UIViewController {
     
     func update_with_filter(parameters: Dictionary<String, String>){
         //filter
+        recent_filter = parameters
         var courses = Array<Course>()
         let keys = parameters.keys.array
         var filter_string = get_filter_string(parameters, value: keys[0])
@@ -97,6 +99,34 @@ class CoursesController: UIViewController {
         right_view.update_courses(courses)
     }
     
+    func update_from_last() {
+        if recent_filter != nil{
+            var parameters = recent_filter
+            var courses = Array<Course>()
+            let keys = parameters.keys.array
+            var filter_string = get_filter_string(parameters, value: keys[0])
+            for i in 1..<keys.count {
+                let next_append = get_filter_string(parameters, value: keys[i])
+                if countElements(next_append) > 0 && countElements(filter_string) > 0{
+                    filter_string += " AND "
+                }
+                filter_string += next_append
+            }
+            println(filter_string)
+            if countElements(filter_string) == 0 {
+                courses = Course.allWithOrder("title") as Array<Course>
+            }
+            else{
+                courses = Course.whereT(filter_string, order: "title") as Array<Course>
+            }
+            /*
+            TODO: Apply filter criteria to data model
+            */
+            
+            right_view.update_courses(courses)
+        }
+    }
+    
     func get_filter_string(dict: Dictionary<String, String>, value: String) -> String{
         var string = ""
         if (dict[value]!.rangeOfString("All") != nil){
@@ -108,7 +138,8 @@ class CoursesController: UIViewController {
         }
         else{
             let val = dict[value]!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
-            return "\(value.lowercaseString).name LIKE '\(val)'"
+            let criteria = val.stringByReplacingOccurrencesOfString("'", withString: "\\'")
+            return "\(value.lowercaseString).name LIKE '\(criteria)'"
         }
     }
     
