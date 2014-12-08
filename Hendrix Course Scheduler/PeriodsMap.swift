@@ -110,6 +110,10 @@ func D(calView : CalendarViewController, startTime: Int, endTime : Int, halfStar
     }
 }
 
+func S1(calView : CalendarViewController, title : String) {
+    S(calView, 0, title)
+}
+
 func S2(calView : CalendarViewController, title : String) {
     S(calView, 2, title)
 }
