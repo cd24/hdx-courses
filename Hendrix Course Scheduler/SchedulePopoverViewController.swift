@@ -24,6 +24,7 @@ class SchedulePopoverViewController : UITableViewController{
             }
             sched.append(temp)
         }
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
     }
     
     func set_selected() {
@@ -56,6 +57,21 @@ class SchedulePopoverViewController : UITableViewController{
         }
         return cell
     }
+    
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            var schedule = sched[indexPath.row]
+            sched.removeAtIndex(indexPath.row)
+            schedule.delete()
+            schedule.save()
+            self.tableView.reloadData()
+        }
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sched.count
     }
