@@ -124,7 +124,7 @@ class CoursesFilterView: UITableViewController {
             cell.textLabel!.text = "\(title): \(value)"
         }
         
-        if indexPath.section == 1 {
+        else if indexPath.section == 1 {
             var title = ""
             if indexPath.row < courses!.count {
                 title = courses[indexPath.row].title
@@ -133,17 +133,16 @@ class CoursesFilterView: UITableViewController {
                 title = "No Courses"
             }
             cell.textLabel!.text = title
+            cell.accessoryView = nil
         }
         
-        if indexPath.section == 2 {
+        else if indexPath.section == 2 {
             
             cell.textLabel!.text = "Show Full Courses"
             var enabledSwitch = UISwitch(frame: CGRectMake(0, 0, 75, 30)) as UISwitch
             enabledSwitch.on = true
             cell.accessoryView = enabledSwitch
             enabledSwitch.addTarget(self, action: "switchValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
-            
-            
             
         }
 
