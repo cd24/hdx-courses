@@ -11,21 +11,32 @@ import Foundation
 class SchedulePopoverViewController : UITableViewController{
     var sched : Array<Schedule> = []
     var selectedIdx : Int = 0
+    var parent: CourseViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "add")
         var query = Schedule.all()
         for i in query{
-            sched.append(i as Schedule)
+            var temp = i as Schedule
+            if temp.name == current_schedule.name {
+                selectedIdx = sched.count
+            }
+            sched.append(temp)
         }
     }
+    
+    func set_selected() {
+        
+    }
+    
     func addWithSchedule(incoming : Schedule){
         sched.append(incoming)
         self.tableView.reloadData()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "add"{
+        if segue.identifier == "add" {
             var nav = segue.destinationViewController as UINavigationController
             var newView = nav.topViewController as NewScheduleController
             newView.pres = self
@@ -53,6 +64,8 @@ class SchedulePopoverViewController : UITableViewController{
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         selectedIdx = indexPath.row
+        current_schedule = sched[indexPath.row]
+        update_schedule()
         self.tableView.reloadData()
     }
 }
@@ -73,12 +86,29 @@ class NewScheduleController : XLFormViewController{
     }
     func done(){
         var res = self.formValues()
-        var newSchedule = Schedule.create() as Schedule
-        newSchedule.name = (res["name"] as String)
-        newSchedule.term = (res["term"] as XLFormOptionsObject).displayText() as String
-        newSchedule.year = (res["year"] as XLFormOptionsObject).displayText() as String
-        newSchedule.save()
-        pres.addWithSchedule(newSchedule)
+        var in_use = false
+        //Check if the name is in use
+        var existing = Schedule.all()
+        var sched_name = (res["term"] as XLFormOptionsObject).displayText() as String
+        for s in existing {
+            var sc = s as Schedule
+            if sched_name == sc.name {
+                in_use = true
+            }
+        }
+        
+        if in_use {
+            var alert_view = UIAlertView(title: "That name is already taken", message: "The schedule name you have enetered is already in use.  You should either delete  or modify the existing schedule", delegate: nil, cancelButtonTitle: "Close", otherButtonTitles: "Ok")
+            alert_view.show()
+        }
+        else{
+            var newSchedule = Schedule.create() as Schedule
+            newSchedule.name = (res["name"] as String)
+            newSchedule.term = (res["term"] as XLFormOptionsObject).displayText() as String
+            newSchedule.year = (res["year"] as XLFormOptionsObject).displayText() as String
+            newSchedule.save()
+            pres.addWithSchedule(newSchedule)
+        }
     }
     func createForm(){
         var form : XLFormDescriptor
@@ -119,13 +149,6 @@ class NewScheduleController : XLFormViewController{
         row.value = termOptions[0]
         section.addFormRow(row)
         
-        
-        
-        
-        
         self.form = form
-        
-        
-        
     }
 }

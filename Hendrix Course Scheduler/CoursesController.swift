@@ -31,6 +31,11 @@ class CoursesController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var schedules = Schedule.all()
+        if schedules.count > 0 {
+            current_schedule = schedules[0] as Schedule
+        }
+        
         left_view.parent = self
         right_view.parent = self
         let screenSize: CGRect = UIScreen.mainScreen().bounds
