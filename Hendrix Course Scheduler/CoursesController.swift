@@ -23,7 +23,7 @@ class CoursesController: UIViewController {
 
     required init(coder aDecoder: NSCoder) {
         left_view = CoursesFilterView(style:UITableViewStyle.Grouped)
-        right_view = CourseViewController(style: UITableViewStyle.Grouped)
+        right_view = CourseViewController(style: UITableViewStyle.Plain)
         courses = Array<AnyObject>()
         super.init(coder: aDecoder)
     }
