@@ -115,7 +115,6 @@ class CourseViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.add_course_to_schedule(courses_display[indexPath.row])
     }
 }
 class CourseCell : UITableViewCell {
