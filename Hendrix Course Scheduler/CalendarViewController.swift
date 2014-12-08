@@ -7,7 +7,33 @@
 //
 
 import Foundation
+func randomColor() -> UIColor{
+    var hue = (Double( arc4random() % 256) / 256.0 );  //  0.0 to 1.0
+    var saturation = (Double( arc4random() % 128) / 256.0 ) + 0.5;  //  0.5 to 1.0, away from white
+    var brightness = (Double( arc4random() % 128 ) / 256.0 ) + 0.5;  //  0.5 to 1.0, away from black
+    var color = UIColor(hue: CGFloat(hue), saturation: CGFloat(saturation), brightness: CGFloat(brightness), alpha: 1.0) as UIColor
+    return color
+}
 
+func inverseColor(color : UIColor) -> UIColor{
+    var r : UnsafeMutablePointer<CGFloat>, g : UnsafeMutablePointer<CGFloat>, b : UnsafeMutablePointer<CGFloat>, a : UnsafeMutablePointer<CGFloat>
+    r = UnsafeMutablePointer<CGFloat>.alloc(1)
+    g = UnsafeMutablePointer<CGFloat>.alloc(1)
+    b = UnsafeMutablePointer<CGFloat>.alloc(1)
+    a = UnsafeMutablePointer<CGFloat>.alloc(1)
+    color.getRed(r, green: g, blue: b, alpha: a)
+    r.put(1.0 - r.memory)
+    g.put(1.0 - g.memory)
+    b.put(1.0 - b.memory)
+    var color =  UIColor(red: r.memory, green: g.memory, blue: b.memory, alpha: 1.0)
+    r.destroy()
+    g.destroy()
+    b.destroy()
+    a.destroy()
+    return color
+}
+var calendarColor : UIColor = UIColor.greenColor()
+var inverseShared : UIColor = inverseColor(calendarColor)
 class CalendarViewController : UIViewController{
     var daysViews : Array<DayView> = []
     override func viewDidLoad() {
@@ -23,6 +49,20 @@ class CalendarViewController : UIViewController{
             day.addEvent(10,halfStart:true, endTime: 13,halfEnd:true, title: "Lunch")
             daysViews.append(day)
             self.view.addSubview(day)
+        }
+        for c in current_schedule.courses{
+            if let course = c as? Course{
+                var map = ClassPeriodsShared.FunctionMappings
+                if course.period != nil{
+                    if var funcToCall = map[course.period] {
+                        objc_sync_enter(calendarColor)
+                        calendarColor = randomColor()
+                        inverseShared = inverseColor(calendarColor)
+                        funcToCall(calView:self,title: course.title)
+                        objc_sync_exit(calendarColor)
+                    }
+                }
+            }
         }
         
     }
@@ -96,18 +136,20 @@ class CalendarEvent : UIView{
     var label : UILabel!
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.greenColor()
-        var greenColor = UIColor.greenColor()
+        
+        self.backgroundColor = calendarColor
+        var greenColor = calendarColor
         var darkGreen = darkerColorForColor(greenColor)
         self.alpha = 0.95
         self.layer.borderColor = darkGreen.CGColor
         self.layer.borderWidth = 2.0
         self.layer.cornerRadius = 10.0
         label = UILabel(frame: CGRectMake(0, 0, frame.size.width, frame.size.height))
-        label.textColor = UIColor.darkGrayColor()
+        label.textColor = inverseShared
         label.textAlignment = NSTextAlignment.Center
         self.addSubview(label)
         self.clipsToBounds = true
+        
     }
     func darkerColorForColor(c : UIColor) -> UIColor!{
         var r : CGFloat = 0.0, g : CGFloat = 0.0, b : CGFloat = 0.0, a : CGFloat = 0.0

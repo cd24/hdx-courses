@@ -104,7 +104,7 @@ func L10(calView : CalendarViewController,title : String){
 }
 class ClassPeriods {
     
-    var FunctionMappings : Dictionary<String,((calView : CalendarViewController, title : String) -> ())> = [
+    var FunctionMappings : Dictionary<String,((calView : CalendarViewController, title : String) -> ())!> = [
         "A1":A1,
         "A2":A2,
         "A3":A3,
