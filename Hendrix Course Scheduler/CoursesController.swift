@@ -23,13 +23,18 @@ class CoursesController: UIViewController {
 
     required init(coder aDecoder: NSCoder) {
         left_view = CoursesFilterView(style:UITableViewStyle.Grouped)
-        right_view = CourseViewController(style: UITableViewStyle.Grouped)
+        right_view = CourseViewController(style: UITableViewStyle.Plain)
         courses = Array<AnyObject>()
         super.init(coder: aDecoder)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var schedules = Schedule.all()
+        if schedules.count > 0 {
+            current_schedule = schedules[0] as Schedule
+        }
         
         left_view.parent = self
         right_view.parent = self

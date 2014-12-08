@@ -30,6 +30,7 @@ class CoursesFilterView: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "Filters"
         courses = []
         criteria = Dictionary<String, Array<String>>()
@@ -49,6 +50,25 @@ class CoursesFilterView: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.1
         self.navigationItem.rightBarButtonItem = self.editButtonItem()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "dataFinishedLoading:", name: "DataFinishedLoading", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "update_schedule", name: "RefreshSchedule", object: nil)
+        
+        self.update_schedule()
+    }
+    
+    func update_schedule() {
+        if let sched = current_schedule? {
+            courses = []
+            if sched.courses.count > 0 {
+                for course in sched.courses {
+                    var crs = course as Course
+                    courses.append(crs)
+                }
+            }
+        }
+        courses.sort({ (course1: Course, course2: Course) -> Bool in
+            return course1.title < course2.title
+        })
+        self.tableView.reloadData()
     }
     
     func dataFinishedLoading(notification : NSNotification){
@@ -65,6 +85,7 @@ class CoursesFilterView: UITableViewController {
             tempArray.append((ins as SubjectCode).name)
         }
         criteria["Department"] = tempArray
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,7 +96,6 @@ class CoursesFilterView: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 3
     }
@@ -104,18 +124,19 @@ class CoursesFilterView: UITableViewController {
             cell.textLabel!.text = "\(title): \(value)"
         }
         
-        if indexPath.section == 1 {
+        else if indexPath.section == 1 {
             var title = ""
-            if indexPath.section < courses!.count {
-                title = courses[indexPath.section].title
+            if indexPath.row < courses!.count {
+                title = courses[indexPath.row].title
             }
             else {
                 title = "No Courses"
             }
             cell.textLabel!.text = title
+            cell.accessoryView = nil
         }
         
-        if indexPath.section == 2 {
+        else if indexPath.section == 2 {
             
             cell.textLabel!.text = "Show Full Courses"
             var enabledSwitch = UISwitch(frame: CGRectMake(0, 0, 75, 30)) as UISwitch
@@ -143,7 +164,10 @@ class CoursesFilterView: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            var crs = courses[indexPath.row]
             courses!.removeAtIndex(indexPath.row)
+            current_schedule.removeCoursesObject(crs)
+            current_schedule.save()
             self.tableView.reloadData()
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
