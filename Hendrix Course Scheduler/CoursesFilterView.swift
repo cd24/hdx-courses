@@ -143,7 +143,6 @@ class CoursesFilterView: UITableViewController {
             enabledSwitch.on = true
             cell.accessoryView = enabledSwitch
             enabledSwitch.addTarget(self, action: "switchValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
-            
         }
 
         return cell
@@ -211,7 +210,12 @@ class CoursesFilterView: UITableViewController {
     
     func switchValueChanged (sender: UISwitch) {
         showFullCourses = sender.on
+        parent.update_with_filter(get_filter_parameters())
         println("Show full courses: \(showFullCourses)")
+    }
+    
+    func toShowFullCourses() -> Bool {
+        return showFullCourses
     }
     
 
