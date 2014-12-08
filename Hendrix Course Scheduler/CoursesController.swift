@@ -85,6 +85,11 @@ class CoursesController: UIViewController {
             }
             filter_string += next_append
         }
+        if !left_view.toShowFullCourses() {
+            if filter_string != "" {filter_string += " AND "}
+            filter_string += "capacity > currentEnrollment"
+        }
+        //
         println(filter_string)
         if countElements(filter_string) == 0 {
             courses = Course.allWithOrder("title") as Array<Course>
@@ -129,10 +134,11 @@ class CoursesController: UIViewController {
     
     func get_filter_string(dict: Dictionary<String, String>, value: String) -> String{
         var string = ""
-        if (dict[value]!.rangeOfString("All") != nil){
+        
+        if (dict[value]!.rangeOfString("All") != nil) {
             return ""
         }
-        else if value == "Department"{
+        else if value == "Department" {
             let val = dict[value]!.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
             return "subjectCode.name LIKE '\(val)'"
         }
@@ -143,7 +149,7 @@ class CoursesController: UIViewController {
         }
     }
     
-    func add_course(course: AnyObject){
+    func add_course(course: AnyObject) {
         courses.append(course)
         //send message to left controller
     }
