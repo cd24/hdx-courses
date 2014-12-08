@@ -8,6 +8,8 @@
 
 import Foundation
 
+var current_schedule: Schedule!
+
 func printData(){
     var res = Course.all()
     //for c in res{
@@ -31,7 +33,10 @@ func printData(){
     for i in course.subjectCode.courses{
         println((i as Course).title)
     }
-    //}
+}
+
+func update_schedule() {
+    NSNotificationCenter.defaultCenter().postNotificationName("RefreshSchedule", object: nil)
 }
 
 func loadCourses(){
