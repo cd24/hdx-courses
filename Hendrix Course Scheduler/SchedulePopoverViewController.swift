@@ -19,8 +19,10 @@ class SchedulePopoverViewController : UITableViewController{
         var query = Schedule.all()
         for i in query{
             var temp = i as Schedule
-            if temp.name == current_schedule.name {
-                selectedIdx = sched.count
+            if current_schedule != nil {
+                if temp.name == current_schedule.name {
+                    selectedIdx = sched.count
+                }
             }
             sched.append(temp)
         }
@@ -32,10 +34,18 @@ class SchedulePopoverViewController : UITableViewController{
     }
     
     func addWithSchedule(incoming : Schedule){
-        sched.append(incoming)
+        if incoming.name == "" || incoming.name == nil {
+            sched.append(incoming)
+        }
         self.tableView.reloadData()
         self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
+    func dismiss_empty() {
+        self.tableView.reloadData()
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "add" {
             var nav = segue.destinationViewController as UINavigationController
@@ -105,25 +115,29 @@ class NewScheduleController : XLFormViewController{
         var in_use = false
         //Check if the name is in use
         var existing = Schedule.all()
-        var sched_name = (res["term"] as XLFormOptionsObject).displayText() as String
-        for s in existing {
-            var sc = s as Schedule
-            if sched_name == sc.name {
-                in_use = true
+        if let sched_name = res["name"] as? String{
+            for s in existing {
+                var sc = s as Schedule
+                if sched_name == sc.name {
+                    in_use = true
+                }
+            }
+            
+            if in_use {
+                var alert_view = UIAlertView(title: "That name is already taken", message: "The schedule name you have enetered is already in use.  You should either delete  or modify the existing schedule", delegate: nil, cancelButtonTitle: "Close", otherButtonTitles: "Ok")
+                alert_view.show()
+            }
+            else{
+                var newSchedule = Schedule.create() as Schedule
+                newSchedule.name = (res["name"] as String)
+                newSchedule.term = (res["term"] as XLFormOptionsObject).displayText() as String
+                newSchedule.year = (res["year"] as XLFormOptionsObject).displayText() as String
+                newSchedule.save()
+                pres.addWithSchedule(newSchedule)
             }
         }
-        
-        if in_use {
-            var alert_view = UIAlertView(title: "That name is already taken", message: "The schedule name you have enetered is already in use.  You should either delete  or modify the existing schedule", delegate: nil, cancelButtonTitle: "Close", otherButtonTitles: "Ok")
-            alert_view.show()
-        }
-        else{
-            var newSchedule = Schedule.create() as Schedule
-            newSchedule.name = (res["name"] as String)
-            newSchedule.term = (res["term"] as XLFormOptionsObject).displayText() as String
-            newSchedule.year = (res["year"] as XLFormOptionsObject).displayText() as String
-            newSchedule.save()
-            pres.addWithSchedule(newSchedule)
+        else {
+            pres.dismiss_empty()
         }
     }
     func createForm(){
