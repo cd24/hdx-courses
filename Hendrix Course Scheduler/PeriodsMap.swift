@@ -102,6 +102,34 @@ func L9(calView : CalendarViewController,title : String){
 func L10(calView : CalendarViewController,title : String){
     LA(calView,4,title)
 }
+
+
+func D(calView : CalendarViewController, startTime: Int, endTime : Int, halfStart : Bool, title : String){
+    for i in 0..<2{
+        calView.daysViews[(i * 2) + 1].addEvent(startTime, halfStart: halfStart, endTime: endTime, halfEnd: halfStart, title: title)
+    }
+}
+
+func D1(calView : CalendarViewController,title : String){
+    A(calView, 8, 10, title)
+}
+func D2(calView : CalendarViewController,title : String){
+    A(calView, 10, 12, title)
+}
+func D3(calView : CalendarViewController,title : String){
+    A(calView, 12, 14,title)
+}
+func D4(calView : CalendarViewController,title : String){
+    A(calView, 14, 16,title)
+}
+func D5(calView : CalendarViewController,title : String){
+    D(calView,9,11,false,title)
+}
+func D6(calView : CalendarViewController,title : String){
+    D(calView,12,14,true,title)
+}
+
+
 class ClassPeriods {
     
     var FunctionMappings : Dictionary<String,((calView : CalendarViewController, title : String) -> ())> = [
@@ -128,7 +156,12 @@ class ClassPeriods {
         "L8":L8,
         "L9":L9,
         "L10":L10,
-        
+        "D1":D1,
+        "D2":D2,
+        "D3":D3,
+        "D4":D4,
+        "D5":D5,
+        "D6":D6
     ]
     
     var DisplayStrings : Dictionary<String,String!> = [
