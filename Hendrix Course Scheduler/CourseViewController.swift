@@ -116,6 +116,7 @@ class CourseViewController: UITableViewController {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         var (pop, course) = CourseDetailsControllerPopover()
         course.course = courses_display[indexPath.row]
+        course.courseViewController = self
         pop.presentPopoverFromRect(CGRectZero, inView: tableView.cellForRowAtIndexPath(indexPath)!, permittedArrowDirections: UIPopoverArrowDirection.Any, animated: true)
         
     }

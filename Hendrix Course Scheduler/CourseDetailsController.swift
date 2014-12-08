@@ -26,6 +26,7 @@ class LightWrapper : UITableViewCell{
 }
 class CourseDetailsController : UITableViewController{
     var course : Course!
+    var courseViewController : CourseViewController!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.registerClass(LightWrapper.classForCoder(), forCellReuseIdentifier: "Cell")
@@ -35,8 +36,10 @@ class CourseDetailsController : UITableViewController{
         var cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
         if indexPath.section == 0{
             cell.textLabel!.text = "Add Course"
+            cell.textLabel!.textAlignment = NSTextAlignment.Center
         }
         else if indexPath.section == 1 && course != nil{
+            cell.textLabel!.textAlignment = NSTextAlignment.Left
             switch indexPath.row{
             case 0:
                 cell.textLabel?.text = "Title:"
@@ -78,4 +81,11 @@ class CourseDetailsController : UITableViewController{
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 2
     }
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        if indexPath.section == 0{
+            courseViewController.add_course_to_schedule(course)
+        }
+    }
+    
 }
