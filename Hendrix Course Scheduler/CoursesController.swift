@@ -71,7 +71,7 @@ class CoursesController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func update_with_filter(parameters: Dictionary<String, String>){
+    func update_with_filter(parameters: Dictionary<String, String>) {
         //filter
         var courses = Array<Course>()
         let keys = parameters.keys.array

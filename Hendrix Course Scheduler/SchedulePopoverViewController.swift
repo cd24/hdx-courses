@@ -100,6 +100,7 @@ class NewScheduleController : XLFormViewController{
         super.viewDidLoad()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "done")
     }
+    
     func done(){
         var res = self.formValues()
         var in_use = false
@@ -147,7 +148,7 @@ class NewScheduleController : XLFormViewController{
         
         row = XLFormRowDescriptor(tag: "year", rowType: XLFormRowDescriptorTypeSelectorPickerViewInline,title: "Year")
         var yearOptions : Array<XLFormOptionsObject> = []
-        var temp = ["07-08","08-09","09-10","10-11","11-12","12-13","13-14","14-15","15-16"]
+        var temp = ["2007","2008","2009","2010","2011","2012","2013","2014","2015"]
         for year in temp{
             yearOptions.append(XLFormOptionsObject(value: year, displayText: year))
         }
