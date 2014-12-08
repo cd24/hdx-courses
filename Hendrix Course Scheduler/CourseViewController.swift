@@ -24,12 +24,6 @@ class CourseViewController: UITableViewController {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "dataLoaded:", name: "DataFinishedLoading", object: nil)
         self.tableView.registerNib(UINib(nibName: "CourseCell", bundle: nil), forCellReuseIdentifier: "Cell")
         self.tableView.rowHeight = 62.0
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
     func refresh_course() {
@@ -89,7 +83,9 @@ class CourseViewController: UITableViewController {
         var course = courses_display[indexPath.row]
         
         if (course.title != nil && course.subjectCode.name != nil && course.instructor.name != nil) {
-            cell.courseTitle.text = course.title
+            var code = course.courseCode
+            var course_string = code.substringToIndex(advance(code.startIndex, countElements(code) - 4)).substringFromIndex(advance(code.startIndex, 5))
+            cell.courseTitle.text = "\(course.title) - \(course_string)"
             cell.department.text = course.subjectCode.name
             cell.instructor.text = course.instructor.name
         }
