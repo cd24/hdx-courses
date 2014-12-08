@@ -46,7 +46,7 @@ class CalendarViewController : UIViewController{
             
             var day = DayView(frame: CGRectMake(CGFloat(xPos), 0, CGFloat(width), self.view.frame.size.height - 64))
             day.headerLabel.text = days[i]
-            day.addEvent(10,halfStart:true, endTime: 13,halfEnd:true, title: "Lunch")
+            //day.addEvent(10,halfStart:true, endTime: 13,halfEnd:true, title: "Lunch")
             daysViews.append(day)
             self.view.addSubview(day)
         }
